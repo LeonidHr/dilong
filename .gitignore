@@ -1,0 +1,9 @@
+node_modules
+package-lock.json
+
+src/js/files/datepicker.js
+src/js/files/gallery.js
+src/js/files/gotoblock.js
+src/js/files/parallax-mouse.js
+src/js/files/rellax.js
+src/js/files/scroll.js

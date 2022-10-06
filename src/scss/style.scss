@@ -1,0 +1,147 @@
+@use "sass:math";
+
+//mixins==============================================================
+@import 'base/mixins';
+@import 'icons';
+
+//fonts=============================================================
+//&display=swap
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,400;0,500;0,600;0,700;1,200&display=swap');
+@import 'iconFont';
+
+// Минимальная ширина страницы
+$minWidth: 320;
+// Ширина полотна (макета)
+$maxWidth: 1920;
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1280;
+
+// Брейк-поинты
+$pc: em($maxWidthContainer); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: em(767.98); // Телефоны L
+$mobileSmall: em(479.98); // Телефоны S
+
+//main mesh=========================================================
+._container{
+  max-width: rem($maxWidthContainer);
+  margin: 0 auto;
+  padding: 0 rem(15);
+  box-sizing: content-box;
+
+  // @media (max-width: $pc) {
+  //   max-width: rem(970);
+  // }
+  // @media (max-width: $tablet) {
+  //   max-width: rem(750);
+  // }
+  // @media (max-width: $mobile) {
+  //   max-width: none;
+  // }
+}
+
+
+//Подклбчение шрифтов===============================================
+$fontFamily: 'Jost', sans-serif;
+$fontSize: rem(16);
+
+// Цветовая тема
+
+[data-light] {
+  display: none;
+}
+@media(prefers-color-scheme: light) {
+  [data-light] {
+    display: block;
+  }
+  [data-dark] {
+    display: none;
+  }
+}
+
+
+// Основные цвета
+$mainColor: #0B0C0B;
+$greyColorLight: #95A3BA;
+$greenLight: #00A373;
+$greenColor: #00F0A9;
+$blueColor: #0A766F;
+$darkBlueColor: #374151;
+$orangeColor:#FF8000;
+$orangeColorDark:#FF3800;
+
+
+//null styles=======================================================
+@import 'base/null';
+
+// ТЕЛО САЙТА
+body {
+  color: $mainColor;
+  background-color: #fff;
+
+  .lock & {
+    overflow: hidden;
+  }
+}
+
+//page=============================================================
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.page {
+  flex: 1 1 auto;
+
+  &__main-slider {
+  }
+  &__products {
+  }
+  &__configurators {
+  }
+  &__registration {
+  }
+  &__partners {
+  }
+}
+
+//_ibg
+._ibg{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  & img{
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+  }  
+}
+
+//Общие стили==========================================================
+@import 'ui'; 
+//popup==========================================================================
+// @import 'base/popup.scss';
+//spollers========================================================================
+// @import 'base/spollers';
+//swiper========================================================================
+@import 'base/swiper';
+//gallery=====================================================================
+// @import 'gallery/lightgallery';
+//forms====================================================================
+@import 'base/forms';
+//tabs====================================================================
+// @import 'base/tabs';
+//header ==============================================================
+@import 'styleHeader';
+//footer==================================================================
+@import 'styleFooter';
+
+//Pages==========================================================================
+@import 'pages/mainPage';
