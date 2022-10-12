@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="img/logo-sm.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.min.css?_v=20221006225233">
+  <link rel="stylesheet" href="css/style.min.css?_v=20221012172812">
   <title>Main Page</title>
 </head>
   <body>
@@ -231,11 +231,11 @@
         </div>
         <div class="header__actions actions-header">
           <div data-da=".menu__body,767.98,last" class="actions-header__authorization _icon-exit-door">
-            <button id="come" type="button">
+            <button data-come type="button">
               Войти
             </button>
             <span>или</span> 
-            <button id="register" type="button">
+            <button data-register type="button">
               Зарегистрироваться
             </button> 
           </div>
@@ -256,6 +256,9 @@
     </div>
     <button data-da='.menu__body,767.98,last' class='support-btn _icon-search-box'>Поддержка</button>
   </div>
+  <div id="modal" class="modal">
+	
+</div>
 </header>
 
 
@@ -584,15 +587,15 @@
             </div>
             <div class="registration__form form-registration">
               <h3 class="form-registration__title registration__form-title">Создать аккаунт</h3>
-              <form class="form-registration__form form-registration__form_gap12 registration__form-form" action="#" name="form">
+              <form data-reg class="form-registration__form form-registration__form_gap12 registration__form-form" action="#" name="form">
                 <div class="form-registration__item">
-                  <input class="form-registration__input" autocomplete="off" type="text" name="name-company" placeholder="Название компании *">
+                  <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="name-company" placeholder="Название компании *">
                 </div>
                 <div class="form-registration__item">
-                  <input class="form-registration__input" autocomplete="off" type="text" name="your-name" placeholder="Ваше имя *">
+                  <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="your-name" placeholder="Ваше имя *">
                 </div>
                 <div class="form-registration__item">
-                  <input class="form-registration__input" autocomplete="off" type="number" name="phone" placeholder="Номер телефона *">
+                  <input class="form-registration__input _phone" data-error="Некорректный номер" data-req autocomplete="off" type="text" name="phone" placeholder="Номер телефона *">
                 </div>
                 <button class="form-registration__btn btn-form btn-form_bg-rev" type="submit"><span>Зарегистрироваться</span></button>
               </form>
@@ -712,6 +715,6 @@
 
 
     </div>
-    <script src="js/app.min.js?_v=20221006225233"></script>
+    <script src="js/app.min.js?_v=20221012172812"></script>
   </body>
 </html>

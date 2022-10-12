@@ -387,6 +387,117 @@ body {
   transition: color 0.3s ease 0s;
 }
 
+.modal {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.modal img {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+
+.modal.modal-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal.modal-open .modal__form-registration {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.modal__form-registration {
+  position: relative;
+  min-width: 542px;
+  background-color: #fff;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+  text-align: center;
+  overflow: auto;
+}
+
+.modal__form-registration.open {
+  -webkit-animation: showForm 0.3s ease 0s;
+          animation: showForm 0.3s ease 0s;
+}
+
+@-webkit-keyframes showForm {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes showForm {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+.modal__title:not(:last-child) {
+  margin: 0 0 0.75rem 0;
+}
+
+.modal__text {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.modal__text:not(:last-child, .modal__text_in-form) {
+  margin: 0 0 1.875rem 0;
+}
+
+.modal .modal-exit {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #95A3BA;
+  font-size: 0.875rem;
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -483,13 +594,83 @@ body {
   transition: opacity 0.5s ease 0s;
 }
 
+.form-registration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  position: relative;
+  padding-top: 42px;
+  padding-bottom: 42px;
+  padding-right: 70px;
+  padding-left: 70px;
+}
+
+.form-registration._sending::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 130%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-registration._sending::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4.6875rem;
+  height: 4.6875rem;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: url("../../img/spinner.svg") no-repeat;
+  background-size: 4.6875rem 4.6875rem;
+}
+
 .form-registration__title {
   font-size: 20px;
   font-weight: 500;
   line-height: 150%;
 }
 
+.form-registration .success-title {
+  max-width: 25.125rem;
+  text-align: start;
+}
+
+.form-registration .success-title:not(:last-child) {
+  margin: 0 0 0.75rem 0;
+}
+
+.form-registration .success-text {
+  text-align: start;
+  font-size: 0.875rem;
+  line-height: 150%;
+  color: #1F2937;
+}
+
+.form-registration .success-img:not(:last-child) {
+  margin: 0 0 0.75rem 0;
+}
+
+.form-registration .success-img img {
+  max-width: 100%;
+}
+
 .form-registration__form {
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -498,17 +679,41 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 1.5rem;
+  position: relative;
 }
 
 .form-registration__form_gap12 {
   row-gap: 24px;
 }
 
+.form-registration__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-registration__item .error {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  color: #FF4305;
+  font-size: 0.8125rem;
+}
+
+.form-registration__item_checkbox {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
 .form-registration__input {
   background: #F7FAFC;
   border: 1px solid #E1E6F0;
   padding: 0.875rem 1.25rem;
-  width: 100%;
+  min-width: 100%;
   font-size: 0.875rem;
   line-height: 160%;
 }
@@ -538,9 +743,70 @@ body {
   font-style: italic;
 }
 
+.form-registration__checkbox {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.form-registration__label {
+  position: relative;
+  font-size: 0.875rem;
+  line-height: 120%;
+  color: #1F2937;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 0.875rem;
+  cursor: pointer;
+}
+
+.form-registration__label span {
+  white-space: nowrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.form-registration__label::before {
+  content: "";
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 1.25rem;
+          flex: 0 0 1.25rem;
+  height: 1.25rem;
+  background: #FFFFFF;
+  border: 1px solid #00F0A9;
+}
+
+.form-registration__label::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 0.8125rem;
+  height: 0.8125rem;
+  top: 0.1875rem;
+  left: 0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  background: url("../../img/icons/checkbox.svg") no-repeat;
+  background-size: 0.8125rem 0.8125rem;
+}
+
 .form-registration__btn {
   -ms-flex-item-align: start;
       align-self: flex-start;
+}
+
+.form-registration__btn_strech {
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
 }
 
 .form-registration__text {
@@ -550,9 +816,18 @@ body {
   color: #6C7A96;
 }
 
+.form-registration__text button {
+  color: #FF4305;
+}
+
 .form-registration__text-link {
   text-decoration: underline !important;
   white-space: nowrap;
+}
+
+.form-registration__checkbox:checked + .form-registration__label::after {
+  opacity: 1;
+  visibility: visible;
 }
 
 .header {
@@ -570,11 +845,13 @@ body {
   min-height: 80px;
 }
 
-.header._scroll .header__logo img:first-child {
+.header._scroll .header__logo img:nth-child(1),
+.header._scroll .header__logo picture:nth-child(1) {
   display: none;
 }
 
-.header._scroll .header__logo img:last-child {
+.header._scroll .header__logo img:nth-child(3),
+.header._scroll .header__logo picture:nth-child(3) {
   display: block;
   -webkit-animation: headerShow 0.5s ease 0s;
           animation: headerShow 0.5s ease 0s;
@@ -661,21 +938,25 @@ body {
   z-index: 12;
 }
 
-.header__logo img {
+.header__logo img,
+.header__logo picture {
   max-width: 100%;
 }
 
-.header__logo img:first-child {
+.header__logo img:nth-child(1),
+.header__logo picture:nth-child(1) {
   display: block;
   -webkit-animation: headerShow 0.5s ease 0s;
           animation: headerShow 0.5s ease 0s;
 }
 
-.header__logo img:nth-child(2) {
+.header__logo img:nth-child(2),
+.header__logo picture:nth-child(2) {
   display: none;
 }
 
-.header__logo img:last-child {
+.header__logo img:nth-child(3),
+.header__logo picture:nth-child(3) {
   display: none;
 }
 
@@ -2099,6 +2380,22 @@ body {
     font-size: calc(24px + 8 * ((100vw - 320px) / 960));
   }
 
+  .form-registration {
+    padding-top: calc(16px + 26 * ((100vw - 320px) / 960));
+  }
+
+  .form-registration {
+    padding-bottom: calc(16px + 26 * ((100vw - 320px) / 960));
+  }
+
+  .form-registration {
+    padding-right: calc(20px + 50 * ((100vw - 320px) / 960));
+  }
+
+  .form-registration {
+    padding-left: calc(20px + 50 * ((100vw - 320px) / 960));
+  }
+
   .form-registration__title {
     font-size: calc(18px + 2 * ((100vw - 320px) / 960));
   }
@@ -2391,19 +2688,6 @@ body {
     height: 100%;
     background-color: #fff;
     overflow: auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     row-gap: 1.25rem;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
@@ -2423,7 +2707,7 @@ body {
         -ms-flex-align: center;
             align-items: center;
     row-gap: 15px;
-    padding: 300px 0 30px 0;
+    padding: 150px 0 30px 0;
   }
 
   .menu__item {
@@ -2560,19 +2844,23 @@ body {
 }
 
 @media (max-width: 47.99875em) {
-  .header__logo img:first-child {
+  .header__logo img:nth-child(1),
+  .header__logo picture:nth-child(1) {
     display: none;
   }
 
-  .header__logo img:last-child {
+  .header__logo img:nth-child(3),
+  .header__logo picture:nth-child(3) {
     display: block;
   }
 
-  .menu-open .header__logo img:last-child {
+  .menu-open .header__logo img:nth-child(3),
+  .menu-open .header__logo picture:nth-child(3) {
     display: none !important;
   }
 
-  .menu-open .header__logo img:nth-child(2) {
+  .menu-open .header__logo img:nth-child(2),
+  .menu-open .header__logo picture:nth-child(2) {
     display: block;
   }
 
@@ -2596,9 +2884,13 @@ body {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
     display: flex !important;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .support-btn {
+    margin: 0 auto;
     min-width: 80%;
     min-height: 2.875rem;
   }
@@ -2629,6 +2921,12 @@ body {
 
   .actions-header {
     margin: 0 1.25rem;
+  }
+}
+
+@media (max-width: 34.37375rem) {
+  .modal__form-registration {
+    min-width: 320px;
   }
 }
 
@@ -2704,6 +3002,10 @@ body {
 
   .btn-form:hover::after {
     opacity: 1;
+  }
+
+  .form-registration__text button:hover {
+    text-decoration: underline;
   }
 
   .form-registration__text-link:hover {
