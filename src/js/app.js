@@ -1,6 +1,7 @@
 import * as functions  from "./files/functions.js";
-import * as forms from "./files/forms.js";
-import * as scroll from "./files/scroll.js";
+import modalForm from './files/modal-form.js'
+import formInit from "./files/forms.js";
+// import * as scroll from "./files/scroll.js";
 
 functions.isWebp();
 functions.ibg();
@@ -13,8 +14,11 @@ import "./files/dynamic_adapt.js";
 //меню бургер
 functions.menuInit();
 
+// модалка
+modalForm();
+
 //работа с формой
-// forms.formInit();
+formInit();
 
 //споллеры
 functions.spollers();

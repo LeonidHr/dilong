@@ -313,15 +313,15 @@
             </div>
             <div class="registration__form form-registration">
               <h3 class="form-registration__title registration__form-title">Создать аккаунт</h3>
-              <form class="form-registration__form form-registration__form_gap12 registration__form-form" action="#" name="form">
+              <form data-reg class="form-registration__form form-registration__form_gap12 registration__form-form" action="#" name="form">
                 <div class="form-registration__item">
-                  <input class="form-registration__input" autocomplete="off" type="text" name="name-company" placeholder="Название компании *">
+                  <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="name-company" placeholder="Название компании *">
                 </div>
                 <div class="form-registration__item">
-                  <input class="form-registration__input" autocomplete="off" type="text" name="your-name" placeholder="Ваше имя *">
+                  <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="your-name" placeholder="Ваше имя *">
                 </div>
                 <div class="form-registration__item">
-                  <input class="form-registration__input" autocomplete="off" type="number" name="phone" placeholder="Номер телефона *">
+                  <input class="form-registration__input _phone" data-error="Некорректный номер" data-req autocomplete="off" type="text" name="phone" placeholder="Номер телефона *">
                 </div>
                 <button class="form-registration__btn btn-form btn-form_bg-rev" type="submit"><span>Зарегистрироваться</span></button>
               </form>
