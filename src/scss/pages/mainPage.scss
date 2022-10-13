@@ -233,7 +233,11 @@
   // .cards-products__img
 
   &__img {
-    padding: 0 0 81% 0;
+
+    img {
+      max-width: 100%;
+    }
+
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 16, 12, 1);
     }

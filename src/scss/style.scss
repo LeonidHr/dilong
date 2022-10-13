@@ -75,14 +75,18 @@ $orangeColorDark:#FF3800;
 @import 'base/null';
 
 // ТЕЛО САЙТА
-body {
-  color: $mainColor;
-  background-color: #fff;
 
+html {
   .lock & {
     overflow: hidden;
   }
 }
+
+body {
+  color: $mainColor;
+  background-color: #fff;
+}
+
 
 //page=============================================================
 .wrapper {
