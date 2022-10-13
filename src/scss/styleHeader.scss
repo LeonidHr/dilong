@@ -16,7 +16,7 @@
     }
 
     .header__logo {
-      img, picture {
+      picture {
         &:nth-child(1) {     
           display: none;
         }

@@ -633,7 +633,7 @@ body {
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background: url("../../img/spinner.svg") no-repeat;
+  background: url("../img/spinner.svg") no-repeat;
   background-size: 4.6875rem 4.6875rem;
 }
 
@@ -845,12 +845,10 @@ body {
   min-height: 80px;
 }
 
-.header._scroll .header__logo img:nth-child(1),
 .header._scroll .header__logo picture:nth-child(1) {
   display: none;
 }
 
-.header._scroll .header__logo img:nth-child(3),
 .header._scroll .header__logo picture:nth-child(3) {
   display: block;
   -webkit-animation: headerShow 0.5s ease 0s;

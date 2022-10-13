@@ -44,7 +44,7 @@ function formInit() {
 						form.parentElement.classList.remove('_sending');
 						openModalResult({
                             modal: '#modal', 
-                            pathImg: '../../img/icons/done.svg',
+                            pathImg: 'img/icons/done.svg',
                             title: 'Мы отправили ссылку для подтверждения регистрации на указанный e-mail',
                             text: 'Пожалуйста, перейдите по ссылке для окончания регистрации',
                         });
@@ -52,22 +52,21 @@ function formInit() {
 						form.parentElement.classList.remove('_sending');
 						openModalResult({
                             modal: '#modal', 
-                            pathImg: '../../img/icons/done.svg',
+                            pathImg: 'img/icons/done.svg',
                             title: 'Произошла ошибка',
                         });
 					}).finally(() => {
 						form.reset();
 					});
 				}
-
-                //! через деструктуризацию  
+ 
 				if (form.hasAttribute('data-remind-form')) {
 					postData('server-remind.php', json)
 					.then(data => {
 						form.parentElement.classList.remove('_sending');
 						openModalResult({
                             modal: '#modal', 
-                            pathImg: '../../img/icons/message-arrow.svg',
+                            pathImg: 'img/icons/message-arrow.svg',
                             title: 'Мы отправили ссылку для восстановления пароля на указанный e-mail',
                             btn: `<button data-switching class="form-registration__btn btn-form" type="submit"><span>Войти</span></button>`,
                         });
@@ -75,7 +74,7 @@ function formInit() {
 						form.parentElement.classList.remove('_sending');
 						openModalResult({
                             modal: '#modal', 
-                            pathImg: '../../img/icons/message-arrow.svg',
+                            pathImg: 'img/icons/message-arrow.svg',
                             title: 'Произошла ошибка',
                             btn: `<button data-switching data-come class="form-registration__btn btn-form" type="submit"><span>Войти</span></button>`,
                         });
@@ -92,7 +91,7 @@ function formInit() {
 						form.parentElement.classList.remove('_sending');
 						openModalResult({
                             modal: '#modal', 
-                            pathImg: '../../img/icons/done.svg',
+                            pathImg: 'img/icons/done.svg',
                             title: 'Произошла ошибка',
                         });
 					}).finally(() => {

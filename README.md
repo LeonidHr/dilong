@@ -48,3 +48,26 @@ __In order for sending letters to mail to work, you need to add the [PHPMailer p
 ## \#Folder structure
 
 src - source files. gulp - gulp config files. dist - ready files for perview. dist branch - project perview.
+
+## \#Important
+
+Header logo looks normal only after building
+
+```SCSS
+picture {
+      max-width: 100%;
+
+      &:nth-child(1) {
+        display: block;
+        animation: headerShow 0.5s ease 0s;
+      }
+
+      &:nth-child(2) {
+        display: none;
+      }
+
+      &:nth-child(3) {
+        display: none;
+      }
+}
+```
