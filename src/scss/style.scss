@@ -76,15 +76,13 @@ $orangeColorDark:#FF3800;
 
 // ТЕЛО САЙТА
 
-html {
-  .lock & {
-    overflow: hidden;
-  }
-}
-
 body {
   color: $mainColor;
   background-color: #fff;
+
+  .lock & {
+    overflow: hidden;
+  }
 }
 
 
@@ -108,6 +106,8 @@ body {
   &__registration {
   }
   &__partners {
+  }
+  &__catalog {
   }
 }
 
@@ -149,3 +149,4 @@ body {
 
 //Pages==========================================================================
 @import 'pages/mainPage';
+@import 'pages/catalog';

@@ -76,6 +76,11 @@
     @include adaptiveValue("font-size", 32, 24, 1);
     line-height: 135%;
   }
+
+  &_s36 {
+    @include adaptiveValue("font-size", 36, 24, 1);
+    line-height: 130%;
+  }
 }
 
 .product-title {

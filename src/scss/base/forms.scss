@@ -165,10 +165,16 @@
     min-width: 100%;
     font-size: rem(14); 
     line-height: 160%;
+    transition: border 0.3s ease 0s;
 
     &::placeholder {
       color: #6C7A96;
       font-style: italic;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $orangeColor;
     }
   }
 

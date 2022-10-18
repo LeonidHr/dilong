@@ -35,14 +35,14 @@ function initSliders() {
 			// Пагинация
 			
 			pagination: {
-				el: '.swiper-pagination',
+				el: '.main-slider__slider .swiper-pagination',
 				clickable: true,
 			},
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.main-slider__slider .swiper-button-prev',
+				nextEl: '.main-slider__slider .swiper-button-next',
 			},
 
 			autoplay: {
@@ -63,8 +63,8 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.cards-products .swiper-button-prev',
+				nextEl: '.cards-products .swiper-button-next',
 			},
 
 			// Брейкпоинты
@@ -104,8 +104,8 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.partners .swiper-button-prev',
+				nextEl: '.partners .swiper-button-next',
 			},
 
 			// Брейкпоинты

@@ -1,0 +1,133 @@
+
+.catalog {
+  @include adaptiveValue("margin-top", 189, 200, 1);
+  @include adaptiveValue("margin-bottom", 133, 32, 1);
+  // .catalog__container
+
+  &__container {
+  }
+
+  // .catalog__title
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 40, 20, 1);
+    }
+  }
+
+  // .catalog__subtitle
+
+  &__subtitle {
+    position: relative;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 32, 16, 1);
+    }
+
+    @media (max-width: rem(1369.98)){
+      margin: 0 0 0 rem(44); 
+    }
+
+    &::before {
+      position: absolute;
+      top: 10px;
+      left: -44px;
+      color: $greenColor;
+      font-size: rem(16);
+    }
+  }
+
+  // .catalog__category
+
+  &__category {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 113, 32, 1);
+    }
+  }
+}
+
+.category-catalog {
+  display: flex;
+  align-items: flex-start;
+  @include adaptiveValue("gap", 32, 8, 1);
+
+  @media (max-width:$pc){
+    flex-wrap: wrap;
+  }
+
+  // .category-catalog__item
+
+  &__item {
+    flex: 0 0 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    @include adaptiveValue("min-height", 214, 155, 1);
+    @include adaptiveValue("padding-right", 23, 16, 1);
+    @include adaptiveValue("padding-left", 23, 16, 1);
+    @include adaptiveValue("padding-top", 12, 16, 1);
+    @include adaptiveValue("padding-bottom", 12, 16, 1);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: 0;
+      transition: opacity 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    @media (max-width:$tablet){
+      flex: 0 0 190px;
+    }
+
+    @media (max-width:$mobile){
+      flex: 0 0 167px;
+    }
+  }
+
+  // .category-catalog__item-body
+
+  &__item-body {
+    flex: 0 0 150%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+
+  // .category-catalog__title
+
+  &__title {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 20, 14, 1);
+    line-height: 150%;
+    text-transform: uppercase;
+    color: $greenColor;
+    flex: 1 1 auto;
+
+    // .category-catalog__title
+
+    &_w {
+      color: #FFFFFF;
+    }
+  }
+}
+.configurators {
+
+  // .configurators__img
+
+  &__img {
+  }
+}

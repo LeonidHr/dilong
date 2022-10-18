@@ -20,6 +20,10 @@ function modalForm() {
       openModalRegister(document.querySelector('#modal'));
     }
 
+    if (targetEl.closest('[data-consultation]')) {
+      openModalConsultation(document.querySelector('#modal'));
+    }
+
     if (targetEl.closest('[data-remind]')) {
       openModalRemind(document.querySelector('#modal'));
     }
@@ -132,6 +136,26 @@ function modalForm() {
     formInit();
   }
 
+  function openModalConsultation(modal) {
+    showModal();
+      modal.innerHTML = `
+        <div id="modal-form" class="form-registration modal__form-registration">
+          <h3 class="form-registration__title modal__title">Получить консультацию</h3>
+          <div class="form-registration__text modal__text">
+            <span>Оставьте ваши контакты и менеджер свяжется с вами, чтобы ответить на все </span>
+          </div>
+          <form data-consult class="form-registration__form registration__form-form" action="#" name="form">
+            <div class="form-registration__item">
+              <input class="form-registration__input _phone" data-error="Некорректный номер" data-req autocomplete="off" type="text" name="phone" placeholder="Номер телефона *">
+            </div>  
+            <button data-switching class="form-registration__btn form-registration__btn_strech btn-form" type="submit"><span>Позвоните мне</span></button>
+          </form>
+          <button id="modal-exit" class="_icon-exit modal-exit" type="button"></button> 
+        </div>
+      `;
+    formInit();
+  }
+
 }
 
 export function openModalResult({modal, pathImg, title, text, btn}) {
@@ -155,13 +179,11 @@ export function openModalResult({modal, pathImg, title, text, btn}) {
   formInit();
 }
 
-function showModal() {
+export function showModal() {
   addClass('.modal', 'modal-open');
-  document.documentElement.classList.add('lock');
 }
-function hiddenModal() {
+export function hiddenModal() {
   removeClass('.modal', 'modal-open');
-  document.documentElement.classList.remove('lock');
 }
 
 export default modalForm;

@@ -1,18 +1,19 @@
 import { openModalResult } from "./modal-form.js";
+import { hiddenModal } from "./modal-form.js";
 
 function formInit() {
 	const forms = document.querySelectorAll('form');
 	const popup = document.querySelector('#modal');
 
+	document.addEventListener("keydown", e => {
+		if (e.code === 'Escape') {
+			hiddenModal();
+		}
+	});
+
 	forms.forEach(form => {
 		bindPostData(form);
 	});
-
-	const messages = {
-    loading: 'img/spinner.svg',
-    succses: 'Данные отправлены',
-    failed: 'Произошла ошибка, попробуйте позже',
-  };
 
 	const postData = async (url, data) => {
     const res = await fetch(url, {
@@ -62,7 +63,7 @@ function formInit() {
  
 				if (form.hasAttribute('data-remind-form')) {
 					postData('server-remind.php', json)
-					.then(data => {
+					.then(data =>{ 
 						form.parentElement.classList.remove('_sending');
 						openModalResult({
                             modal: '#modal', 
@@ -77,6 +78,27 @@ function formInit() {
                             pathImg: 'img/icons/message-arrow.svg',
                             title: 'Произошла ошибка',
                             btn: `<button data-switching data-come class="form-registration__btn btn-form" type="submit"><span>Войти</span></button>`,
+                        });
+					}).finally(() => {
+						form.reset();
+					});
+				}
+
+				if (form.hasAttribute('data-consult')) {
+					postData('server-consultation.php', json)
+					.then(data => {
+						form.parentElement.classList.remove('_sending');
+						openModalResult({
+                            modal: '#modal', 
+                            pathImg: 'img/icons/done.svg',
+                            title: 'Отлично! мы получили ваш запрос и скоро свяжемся с вами',
+                        });
+					}).catch(() => {
+						form.parentElement.classList.remove('_sending');
+						openModalResult({
+                            modal: '#modal', 
+                            pathImg: 'img/icons/done.svg',
+                            title: 'Произошла ошибка',
                         });
 					}).finally(() => {
 						form.reset();
@@ -98,7 +120,7 @@ function formInit() {
 						form.reset();
 					});
 				}
-			
+				
 			}	
 		});
 	}
