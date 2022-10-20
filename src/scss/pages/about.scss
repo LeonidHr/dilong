@@ -1,0 +1,88 @@
+.page-info {
+
+    &__container {
+    }
+
+    &__sidebar {
+    }
+
+    &__about {
+    }
+}
+
+
+.about {
+
+    &__title {&:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 40, 20, 1);
+    }
+    }
+
+    &__info {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 36, 20, 1);
+        }
+    }
+
+    &__text {
+        font-size: rem(13);
+        line-height: 170%;
+        color: #111827;
+    
+        span {
+            text-transform: uppercase;
+            font-size: rem(14);
+            font-weight: 600;
+        }
+
+        p {
+            &:not(:last-child) {
+                margin: 0 0 em(14) 0;
+            }
+        }
+    }
+}
+
+.info-about {
+    display: grid;
+    grid-template-columns: repeat(3, 31%);
+    grid-auto-flow: dense;
+    @include adaptiveValue("gap", 24, 12, 1);
+
+    @media (max-width:$mobile){
+        grid-template-columns: repeat(2, 49%);
+    }
+
+    @media (max-width:$mobileSmall){
+        grid-template-columns: auto;
+    }
+
+    &__item {
+        min-height: rem(222);
+    }
+
+    &__content {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        @include adaptiveValue("padding-left", 40, 24, 1);
+        @include adaptiveValue("padding-bottom", 27, 20, 1);
+        max-width: rem(172);
+    }
+
+    &__num {
+        white-space: nowrap;
+        @include adaptiveValue("font-size", 60, 40, 1);
+        line-height: 150%;
+        color: $orangeColorDark;
+    }
+
+    &__descr {
+        font-weight: 600;
+        @include adaptiveValue("font-size", 18, 14, 1);
+        line-height: 150%;
+        text-transform: uppercase;
+        color: #fff;
+    }
+}

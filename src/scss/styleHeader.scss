@@ -16,7 +16,7 @@
     }
 
     .header__logo {
-      picture, img {
+      picture {
         &:nth-child(1) {     
           display: none;
         }
@@ -109,7 +109,7 @@
       }
     }
 
-    picture, img {
+    picture {
       max-width: 100%;
 
       &:nth-child(1) {
