@@ -95,6 +95,7 @@ body {
   flex-direction: column;
 }
 .page {
+  @include adaptiveValue("margin-top", 189, 200, 1);
   flex: 1 1 auto;
 
   &__main-slider {
@@ -141,7 +142,7 @@ body {
 //forms====================================================================
 @import 'base/forms';
 //tabs====================================================================
-// @import 'base/tabs';
+@import 'base/tabs';
 //header ==============================================================
 @import 'styleHeader';
 //footer==================================================================
@@ -150,3 +151,4 @@ body {
 //Pages==========================================================================
 @import 'pages/mainPage';
 @import 'pages/catalog';
+@import 'pages/delivery';

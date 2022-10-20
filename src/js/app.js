@@ -37,7 +37,7 @@ functions.spollers();
 import "./files/sliders.js";
 
 //tabs
-// functions.tabs();
+functions.tabs();
 
 //Плавная прокрутка к нужному блоку
 // scroll.pageNavigation();

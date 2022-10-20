@@ -2,20 +2,23 @@
 	// .tabs__navigation
 	&__navigation {
 		display: flex;
+		@include adaptiveValue("gap", 6, 0, 1);
 	}
 	// .tabs__title
 	&__title {
-		border: 1px solid #eee;
-		padding: rem(10) rem(15);
-		border-radius: rem(5);
+		padding: rem(10) 0;
+		@include adaptiveValue("padding-right", 24, 16, 1);
+		@include adaptiveValue("padding-left", 24, 16, 1);
+		background: #F0F2F7;
+		transition: all 0.3s ease 0s;
+
 		&._tab-active {
-			border: 1px solid #000;
+			background: linear-gradient(97.66deg, #10B981 0%, #00F0A9 100%);
+			color: #FFFFFF;
 		}
 	}
 	// .tabs__content
 	&__content {
-		border: 1px solid #eee;
-		padding: rem(10) rem(15);
 	}
 	// .tabs__body
 	&__body {

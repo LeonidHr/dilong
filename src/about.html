@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/head.html',{
+	"title":"О компании"
+	})
+	<body>
+		<div class="wrapper">
+      @@include('html/header.html',{
+        "support":"<button data-da='.menu__body,767.98,last' data-consultation class='support-btn _icon-search-box'>Поддержка</button>"
+      })
+			<main class="page page-info">
+        <div class="page-info__container _container">
+          <aside class="page-info__sidebar sidebar-nav">
+            <nav class="sidebar-nav__nav">
+              <h3 class="sidebar-nav__title">DILONG SENSORS</h3>
+              <ul class="sidebar-nav__list">
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="about.html">О компании</a>
+                </li>
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="#">Контакты</a>
+                </li>
+              </ul>
+              <h3 class="sidebar-nav__title">Помощь</h3>
+              <ul class="sidebar-nav__list">
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="#">Документы и сертификаты</a>
+                </li>
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="#">Об индивидуальном заказе</a>
+                </li>
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="delivery.html">Доставка и оплата</a>
+                </li>
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="#">Для юридических лиц</a>
+                </li>
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="#">База знаний</a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+        </div>
+			</main>
+			@@include('html/footer.html',{})
+		</div>
+    <script src="js/app.min.js"></script>
+	</body>
+</html>

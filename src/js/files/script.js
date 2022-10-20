@@ -41,5 +41,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const headerObserver = new IntersectionObserver(callback);
   headerObserver.observe(headerElement);
 
+
+  //* Добавление иконки в навигации на странице доставки и оплаты
+
+  function showIconOnNav() {
+    const sidebarItems = document.querySelectorAll('.sidebar-nav__item');
+    sidebarItems.forEach(item => {
+      if (item.lastElementChild.innerHTML === document.title ) {
+        item.classList.add('_active');
+      }
+    });
+  }
+  showIconOnNav();
 });
 

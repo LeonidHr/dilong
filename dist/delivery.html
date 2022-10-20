@@ -1,11 +1,23 @@
-<header class="header">
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/logo-sm.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.min.css?_v=20221020195101">
+  <title>Доставка и оплата</title>
+</head>
+	<body>
+		<div class="wrapper">
+      <header class="header">
   <div class="header__wrapper">
     <div class="header__container _container">
       <div class="header__body">
         <a class="header__logo" href="index.html">
-          <img src="@img/logo.png" alt="Logo">
-          <img src="@img/logo-mobi.png" alt="Logo">
-          <img src="@img/logo-sm.png" alt="Logo small">
+          <picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="Logo"></picture>
+          <picture><source srcset="img/logo-mobi.webp" type="image/webp"><img src="img/logo-mobi.png" alt="Logo"></picture>
+          <picture><source srcset="img/logo-sm.webp" type="image/webp"><img src="img/logo-sm.png" alt="Logo small"></picture>
         </a>
         <div class="header__main main-header">
           <div class="main-header__menu menu">
@@ -138,7 +150,7 @@
                     <li class="result-search__item item-result-search">
                       <div class="item-result-search__content">
                         <a class="item-result-search__img _ibg" href="#">
-                          <img src="@img/control/2.png" alt="Controller">
+                          <picture><source srcset="img/control/2.webp" type="image/webp"><img src="img/control/2.png" alt="Controller"></picture>
                         </a>
                         <div class="item-result-search__text-content">
                           <a class="item-result-search__title" href="#">Контроллер MV5000, Meinsberg</a>
@@ -163,7 +175,7 @@
                      <li class="result-search__item item-result-search">
                       <div class="item-result-search__content">
                         <a class="item-result-search__img _ibg" href="#">
-                          <img src="@img/control/2.png" alt="Controller">
+                          <picture><source srcset="img/control/2.webp" type="image/webp"><img src="img/control/2.png" alt="Controller"></picture>
                         </a>
                         <div class="item-result-search__text-content">
                           <a class="item-result-search__title" href="#">Контроллер MV5000, Meinsberg</a>
@@ -188,7 +200,7 @@
                     <li class="result-search__item item-result-search">
                       <div class="item-result-search__content">
                         <a class="item-result-search__img _ibg" href="#">
-                          <img src="@img/control/2.png" alt="Controller">
+                          <picture><source srcset="img/control/2.webp" type="image/webp"><img src="img/control/2.png" alt="Controller"></picture>
                         </a>
                         <div class="item-result-search__text-content">
                           <a class="item-result-search__title" href="#">Контроллер MV5000, Meinsberg</a>
@@ -242,9 +254,11 @@
         <button type="button" class="header__icon icon-menu"><span></span></button>
       </div>
     </div>
-    @@support
+    <button data-da='.menu__body,767.98,last' data-consultation class='support-btn _icon-search-box'>Поддержка</button>
   </div>
-  @@include('modal.html',{})
+  <div id="modal" class="modal">
+	
+</div>
 </header>
 
 
@@ -267,3 +281,220 @@
 
 
 
+
+			<main class="page page-info">
+        <div class="page-info__container _container">
+          <aside class="page-info__sidebar sidebar-nav">
+            <nav class="sidebar-nav__nav">
+              <h3 class="sidebar-nav__title">DILONG SENSORS</h3>
+              <ul class="sidebar-nav__list">
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="about.html">О компании</a>
+                </li>
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="#">Контакты</a>
+                </li>
+              </ul>
+              <h3 class="sidebar-nav__title">Помощь</h3>
+              <ul class="sidebar-nav__list">
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="#">Документы и сертификаты</a>
+                </li>
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="#">Об индивидуальном заказе</a>
+                </li>
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="delivery.html">Доставка и оплата</a>
+                </li>
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="#">Для юридических лиц</a>
+                </li>
+                <li class="sidebar-nav__item _icon-wave">
+                  <a class="sidebar-nav__link" href="#">База знаний</a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+          <section class="page-info__content delivery">
+            <h1 class="title title_s36 delivery__title">Доставка и оплата</h1>
+            <div data-tabs class="tabs">
+              <nav data-tabs-titles class="tabs__navigation">
+                <button type="button" class="tabs__title">Самовывоз</button>
+                <button type="button" class="tabs__title _tab-active">Доставка по Москве и области</button>
+                <button type="button" class="tabs__title">Доставка в регионы</button>
+              </nav>
+              <div data-tabs-body class="tabs__content">
+                <div class="tabs__body">
+                  Содержимое второго таба
+                </div>
+                <div class="tabs__body body-tabs">
+                  <div class="body-tabs__item">
+                    <h3 class="title title_s20 body-tabs__title-main">Доставка в пределах МКАД</h3>
+                    <div class="body-tabs__text">
+                      <p>
+                        Доставка в пределах МКАД производится общественным транспортом, осуществляется курьерской службой интернет-магазина Xiacom.ru. Предварительно Вам поступит СМС сообщение о доставке товара, а так же будет звонок от курьера перед выездом и за час до доставки.
+                      </p>
+                      <p>
+                        * При оформлении заказа после 17:00 текущего дня, доставка переносится на следующий день (за исключением срочной доставки).
+                      </p>
+                    </div>
+                  </div>
+                  <div class="body-tabs__item">
+                    <h3 class="body-tabs__title">Дневная доставка</h3>
+                    <div class="body-tabs__text">
+                      <p>
+                        С 10:00 до 18:00 при оформлении заказа с 10:00 до 12:00 текущего дня
+                      </p>
+                    </div>
+                  </div>
+                  <div class="body-tabs__item">
+                    <h3 class="body-tabs__title">Вечерняя доставка</h3>
+                    <div class="body-tabs__text">
+                      <p>
+                        С 18:00 до 23:00 при оформлении заказа с 12:00 до 17:00 текущего дня
+                      </p>
+                    </div>
+                  </div>
+                  <div class="body-tabs__item">
+                    <h3 class="body-tabs__title">Способы оплаты</h3>
+                    <ul class="body-tabs__item-list item-list-tabs">
+                      <li class="item-list-tabs__item"><span>•</span>Наличными при получении</li>
+                      <li class="item-list-tabs__item"><span>•</span>Безналичный расчет</li>
+                      <li class="item-list-tabs__item"><span>•</span>Visa/MasterCard/Мир</li>
+                    </ul>
+                  </div>
+                  <div class="body-tabs__item item-tabs-prices">
+                    <div class="item-tabs-prices__item item-tabs-prices__item_opacity">
+                      <span>Габариты товара</span>
+                      <span>Стоимость</span>
+                    </div>
+                    <div class="item-tabs-prices__item">
+                      <span>Доставка товара весом до 10 кг — до квартиры/дверей офиса</span>
+                      <span>300 ₽</span>
+                    </div>
+                    <div class="item-tabs-prices__item">
+                      <span>Доставка одной единицы товара весом более 10 кг — до подъезда</span>
+                      <span>490 ₽</span>
+                    </div>
+                    <div class="item-tabs-prices__item">
+                      <span>Доставка более одной единицы товара в одном заказе — до подъезда</span>
+                      <span>+200 ₽</span>
+                    </div>
+                  </div>
+                  <div class="body-tabs__item item-tabs-prices">
+                    <div class="item-tabs-prices__item item-tabs-prices__item_opacity">
+                      <span>Дополнительные услуги</span>
+                      <span>Стоимость</span>
+                    </div>
+                    <div class="item-tabs-prices__item">
+                      <span>
+                        Доставка до дверей крупногабаритного товара весом более 10 кг — здание оборудовано лифтом достаточного объема
+                      </span>
+                      <span>+200 ₽</span>
+                    </div>
+                    <div class="item-tabs-prices__item">
+                      <span>
+                        Доставка до дверей крупногабаритного товара весом более 10 кг — отсутствие или недостаточный объем лифта
+                      </span>
+                      <span>+100 ₽/этаж</span>
+                    </div>
+                  </div>
+                  <div class="body-tabs__item">
+                    <div class="body-tabs__text">
+                      <p>
+                        * Время ожидания клиента при доставке = 15 мин.
+                      </p>
+                      <p>
+                        ** Если до клиента не удалось дозвониться, доставка по адресу не осуществляется.
+                      </p>
+                      <p>
+                        *** Стоимость доставки оплачивается в случае полного или частичного отказа от заказа (в соответствии с пунктом 4 статьи 497 Гражданского Кодекса РФ).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="tabs__body">
+                  Содержимое третьего таба
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+			</main>
+			<footer class="footer">
+  <div class="footer__cotnainer _container">
+    <div class="footer__body">
+      <a class="footer__logo" href="index.html">
+        <picture><source srcset="img/logo-w.webp" type="image/webp"><img src="img/logo-w.png" alt="Logo"></picture>
+        <picture><source srcset="img/logo-w-mobi.webp" type="image/webp"><img src="img/logo-w-mobi.png" alt="Logo"></picture>
+      </a>
+      <div data-da=".footer__cotnainer,992,last" class="footer__main main-footer">
+        <div class="main-footer__column">
+          <div class="main-footer__title">DILONG SENSORS</div>
+          <ul class="main-footer__list">
+            <li class="main-footer__item">
+              <a class="main-footer__link" href="#">О компании</a>
+            </li>
+            <li class="main-footer__item main-footer__item_no-line">
+              <a class="main-footer__link main-footer__link_green" href="#">Контакты:</a>
+            </li>
+            <li class="main-footer__item main-footer__item_no-line">
+              <a class="main-footer__link main-footer__link_big" href="tel:88009289202">8 800 928 92-02</a>
+            </li>
+            <li class="main-footer__item main-footer__item_no-line">
+              <a class="main-footer__link main-footer__link_mail" href="mailto:info@dilong.tech">info@dilong.tech</a>
+            </li>
+          </ul>
+        </div>
+        <div class="main-footer__column">
+          <div class="main-footer__title">Помощь</div>
+          <ul class="main-footer__list">
+            <li class="main-footer__item">
+              <a class="main-footer__link" href="#">Об индивидуальном заказе</a>
+            </li>
+            <li class="main-footer__item">
+              <a class="main-footer__link" href="#">Документы и сертификаты</a>
+            </li>
+            <li class="main-footer__item">
+              <a class="main-footer__link" href="#">Доставка и оплата</a>
+            </li>
+            <li class="main-footer__item">
+              <a class="main-footer__link" href="#">Для юридических лиц</a>
+            </li>
+          </ul>
+        </div>
+        <div class="main-footer__column">
+          <div class="main-footer__title">База знаний</div>
+          <ul class="main-footer__list">
+            <li class="main-footer__item">
+              <a class="main-footer__link" href="#">Смотреть все статьи →</a>
+            </li>
+            <li class="main-footer__item">
+              <a class="main-footer__link" href="#">Договор-оферта</a>
+            </li>
+            <li class="main-footer__item">
+              <a class="main-footer__link" href="#">Политика конфиденциальности</a>
+            </li>
+            <li class="main-footer__item main-footer__item_no-line">
+              <a class="main-footer__link main-footer__link_opacity" href="#">2022 © Все права защищены.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div data-da=".footer__cotnainer,480,last" class="footer__sociables">
+        <a class="footer__sociable _icon-vk" href="#"></a>
+        <a class="footer__sociable _icon-tg" href="#"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+		</div>
+    <script src="js/app.min.js?_v=20221020195101"></script>
+	</body>
+</html>

@@ -72,6 +72,10 @@
   @include adaptiveValue("font-size", 26, 18, 1);
   line-height: 150%;
 
+  &_s20 {
+    font-size: rem(20);
+  }
+
   &_s32 {
     @include adaptiveValue("font-size", 32, 24, 1);
     line-height: 135%;
