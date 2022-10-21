@@ -1,13 +1,13 @@
 @use "sass:math";
 
 //mixins==============================================================
-@import 'base/mixins';
-@import 'icons';
+@import "base/mixins";
+@import "icons";
 
 //fonts=============================================================
 //&display=swap
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,400;0,500;0,600;0,700;1,200&display=swap');
-@import 'iconFont';
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,400;0,500;0,600;0,700;1,200&display=swap");
+@import "iconFont";
 
 // Минимальная ширина страницы
 $minWidth: 320;
@@ -17,13 +17,15 @@ $maxWidth: 1920;
 $maxWidthContainer: 1280;
 
 // Брейк-поинты
-$pc: em($maxWidthContainer); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$pc: em(
+  $maxWidthContainer
+); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: em(767.98); // Телефоны L
 $mobileSmall: em(479.98); // Телефоны S
 
 //main mesh=========================================================
-._container{
+._container {
   max-width: rem($maxWidthContainer);
   margin: 0 auto;
   padding: 0 rem(15);
@@ -40,17 +42,16 @@ $mobileSmall: em(479.98); // Телефоны S
   // }
 }
 
-
 //Подклбчение шрифтов===============================================
-$fontFamily: 'Jost', sans-serif;
-$fontSize: rem(16);
+$fontFamily: "Jost", sans-serif;
+$fontSize: rem(14);
 
 // Цветовая тема
 
 [data-light] {
   display: none;
 }
-@media(prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) {
   [data-light] {
     display: block;
   }
@@ -59,20 +60,18 @@ $fontSize: rem(16);
   }
 }
 
-
 // Основные цвета
-$mainColor: #0B0C0B;
-$greyColorLight: #95A3BA;
-$greenLight: #00A373;
-$greenColor: #00F0A9;
-$blueColor: #0A766F;
+$mainColor: #0b0c0b;
+$greyColorLight: #95a3ba;
+$greenLight: #00a373;
+$greenColor: #00f0a9;
+$blueColor: #0a766f;
 $darkBlueColor: #374151;
-$orangeColor:#FF8000;
-$orangeColorDark:#FF3800;
-
+$orangeColor: #ff8000;
+$orangeColorDark: #ff3800;
 
 //null styles=======================================================
-@import 'base/null';
+@import "base/null";
 
 // ТЕЛО САЙТА
 
@@ -84,7 +83,6 @@ body {
     overflow: hidden;
   }
 }
-
 
 //page=============================================================
 .wrapper {
@@ -112,13 +110,63 @@ body {
   }
 }
 
+.page-info {
+  @include adaptiveValue("margin-bottom", 273, 60, 1);
+  font-size: rem(14);
+
+  &_mb86 {
+    @include adaptiveValue("margin-bottom", 86, 32, 1);
+  }
+
+  &__container {
+    @media (min-width: $tablet) {
+      display: grid;
+      grid-template-columns: 230px auto;
+      @include adaptiveValue("column-gap", 115, 20, 1);
+    }
+
+    &_rev {
+      @media (min-width: $tablet) {
+        grid-template-columns: auto 370px;
+      }
+    }
+  }
+
+  &__sidebar {
+    max-width: 400px;
+    @media (max-width: $tablet) {
+      &:not(.page-info__sidebar_contacts) {
+        display: none;
+      }
+    }
+
+    &_contacts {
+      @include adaptiveValue("margin-right", 40, 0, 1);
+
+      @media (min-width:$tablet){
+        @include adaptiveValue("margin-top", 90, 70, 1);
+      }
+      @media (max-width:$tablet){
+        margin-top: 0;
+        margin-left: 100px;        
+      }
+      @media (max-width:$mobile){
+         margin: 0; 
+      }
+    }
+  }
+
+  &__content {
+  }
+}
+
 //_ibg
-._ibg{
+._ibg {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  & img{
+  & img {
     width: 0;
     height: 0;
     position: absolute;
@@ -126,30 +174,31 @@ body {
     left: 0;
     opacity: 0;
     visibility: hidden;
-  }  
+  }
 }
 
 //Общие стили==========================================================
-@import 'ui'; 
+@import "ui";
 //popup==========================================================================
-@import 'base/modal.scss';
+@import "base/modal.scss";
 //spollers========================================================================
 // @import 'base/spollers';
 //swiper========================================================================
-@import 'base/swiper';
+@import "base/swiper";
 //gallery=====================================================================
 // @import 'gallery/lightgallery';
 //forms====================================================================
-@import 'base/forms';
+@import "base/forms";
 //tabs====================================================================
-@import 'base/tabs';
+@import "base/tabs";
 //header ==============================================================
-@import 'styleHeader';
+@import "styleHeader";
 //footer==================================================================
-@import 'styleFooter';
+@import "styleFooter";
 
 //Pages==========================================================================
-@import 'pages/mainPage';
-@import 'pages/catalog';
-@import 'pages/delivery';
-@import 'pages/about';
+@import "pages/mainPage";
+@import "pages/catalog";
+@import "pages/delivery";
+@import "pages/about";
+@import "pages/contacts";

@@ -553,6 +553,10 @@
     @media (max-width:$tablet){
       width: rem(343);
     }
+
+    &._focus {
+      outline: 1px solid $orangeColor;
+    }
   }
 
   // .search-header__input

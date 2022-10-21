@@ -1,26 +1,4 @@
 
-.page-info {
-    @include adaptiveValue("margin-bottom", 273, 60, 1);
-    font-size: rem(14);
-
-    &__container {
-        @media (min-width:$tablet){
-            display: grid;
-            grid-template-columns: 230px auto;
-            @include adaptiveValue("column-gap", 115, 20, 1);     
-        }
-    }
-
-    &__sidebar {
-        @media (max-width:$tablet){
-            display: none;
-        }
-    }
-
-    &__content {
-    }
-}
-
 
 .delivery {
 

@@ -53,5 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   showIconOnNav();
+
+  //* Добавление при фокусе форме поиска outline
+  
+  function addFocusForSearchForm() {
+    const input = document.querySelector('.search-header__input');
+
+    input.addEventListener("focus", () => {
+      input.parentElement.classList.add('_focus');
+    });
+    input.addEventListener("blur", () => {
+      input.parentElement.classList.remove('_focus');
+    });
+  }
+
+  addFocusForSearchForm();
+
 });
 

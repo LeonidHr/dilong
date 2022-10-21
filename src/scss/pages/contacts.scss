@@ -1,0 +1,212 @@
+
+.contacts {
+
+    @media (max-width:$mobile){
+        &:not(:last-child) {
+            margin: 0 0 20px 0;
+        }
+    }
+
+    &__title {
+        @include adaptiveValue("margin-bottom", 40, 20, 1);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        @media (min-width:$mobile){
+            align-items: flex-start; 
+        }
+    }
+}
+
+.content-contacts {
+    @media (min-width:$mobile){
+        border-top: 1px solid $greenColor;
+        @include adaptiveValue("padding-top", 32, 0, 1);        
+        @include adaptiveValue("padding-right", 40, 0, 1);        
+        @include adaptiveValue("padding-bottom", 47, 0, 1);        
+        @include adaptiveValue("padding-left", 40, 0, 1);        
+    }
+
+    @media (max-width:$mobile){
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__title {
+        font-size: rem(16);
+        line-height: 150%;
+        color: $darkBlueColor;
+
+        @include adaptiveValue("margin-bottom", 24, 16, 1);
+    }
+
+    &__items {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        @include adaptiveValue("row-gap", 32, 16, 1);
+        @include adaptiveValue("column-gap", 40, 15, 1);
+
+        @media (max-width:$mobileSmall){
+            grid-template-columns: 100%; 
+        }
+    }
+
+    &__item {
+        &_full {
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+            .item-contacts-content__icon {
+                @media (max-width:$mobile){
+                    display: none; 
+                }
+            }
+            .item-contacts-content__content {
+                max-width: none;
+            }
+        }
+    }
+}
+.item-contacts-content {
+    display: flex;
+    align-items: flex-start;
+    @include adaptiveValue("gap", 40, 28, 1);
+
+    &_gap12 {
+        gap: rem(12);
+        align-items: flex-end;
+    }
+
+    &__icon {
+        flex: 0 0 rem(28);
+        color: $orangeColorDark;
+        font-size: rem(28);
+        margin-top: 5px;
+    }
+
+    &__content {
+        max-width: rem(220);
+        flex: 1 1 auto;
+    }
+
+    &__label {
+        mix-blend-mode: normal;
+        line-height: 140%;
+        color: #6C7A96;
+
+        &:not(:last-child) {
+            margin-bottom: em(4);
+        }
+        
+        &_dark {
+            color: $darkBlueColor;
+            &:not(:last-child) {
+                @include adaptiveValue("margin-bottom", 16, 12, 1);
+            }
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        font-weight: 500;
+        mix-blend-mode: normal;
+        
+        a {
+            transition: color 0.3s ease 0s;
+            &:not(:last-child) {
+                margin-bottom: em(12);
+            }
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $orangeColorDark;
+                }
+            }
+        }
+    }
+
+    &__icon-sociable {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        background-color: $greyColorLight;
+        @include adaptiveValue("width", 22, 40, 1);
+        @include adaptiveValue("height", 22, 40, 1);
+        border-radius: 6px;
+        @include adaptiveValue("font-size", 9, 16, 1);
+        transition: background-color .3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $darkBlueColor;
+            }
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 32, 16, 1);
+        }
+    }
+
+    &__info {
+        display: grid;
+        grid-template-columns: 169px auto;
+        gap: 12px;
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 16, 12, 1);
+        }
+    }
+
+    &__info-text {
+    }
+
+    &__btn {
+        line-height: 150%;
+        color: #FF4305;
+        border: 1px solid #FF4305;
+        padding: 12.5px 20px;
+        transition: all .3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: $orangeColor;
+                border: 1px solid $orangeColor;  
+            }
+        }
+    }
+}
+
+.info-contact {
+    display: flex;
+    align-items: flex-start;
+    gap: rem(16);
+
+    &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 27, 20, 1);
+    }
+
+    &__img {
+        flex: 0 0 rem(50);
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__content {
+    }
+
+    &__name {
+        font-size: rem(16);
+        line-height: 140%;
+    
+        &:not(:last-child) {
+            margin: 0 0 4px 0;
+        }
+    }
+}

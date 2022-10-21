@@ -32,6 +32,10 @@ button,
 textarea {
 	font-family: $fontFamily;
 	font-size: inherit;
+	resize: vertical;
+	&:focus {
+		outline: none;
+	}
 }
 button {
 	cursor: pointer;
