@@ -1,6 +1,7 @@
 
 
 .delivery {
+    @include adaptiveValue("margin-bottom", 149, 32, 1);
 
     &__title {
         &:not(:last-child) {

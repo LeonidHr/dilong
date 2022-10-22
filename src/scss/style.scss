@@ -111,7 +111,6 @@ body {
 }
 
 .page-info {
-  @include adaptiveValue("margin-bottom", 273, 60, 1);
   font-size: rem(14);
 
   &_mb86 {
@@ -202,3 +201,5 @@ body {
 @import "pages/delivery";
 @import "pages/about";
 @import "pages/contacts";
+@import "pages/confidentiality";
+@import "pages/404";

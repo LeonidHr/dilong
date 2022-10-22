@@ -1,0 +1,53 @@
+
+.confidentiality {
+    @include adaptiveValue("margin-bottom", 156, 32, 1);
+
+    &__container {
+        max-width: rem(730);
+    }
+
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 40, 20, 1);
+        }
+    }
+
+    &__img {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 36, 20, 1);
+        }
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__content {
+    }
+
+    &__subtitle {
+        font-weight: 600;
+        line-height: 170%;
+        color: #06504A;
+        &:not(:last-child) {
+            margin-bottom: em(26);
+        }
+    }
+
+    &__text {
+        p {
+            font-weight: 500;
+            line-height: 140%;
+            &:not(:last-child) {
+                margin-bottom: em(24);
+            }
+        }
+    }
+
+    &__label {
+        font-weight: 600;
+        &:not(:last-child) {
+            margin-bottom: em(10);
+        }
+    }
+}
+

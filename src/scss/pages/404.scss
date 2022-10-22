@@ -1,0 +1,108 @@
+.error-page {
+    @include adaptiveValue("margin-bottom", 175, 32, 1);
+
+    &__container {
+    }
+
+    &__num {
+        font-weight: 100;
+        @include adaptiveValue("font-size", 240, 120, 1);
+        line-height: 92%;
+        color: $greenColor;
+    }
+
+    &__title {
+        font-weight: 300;
+        @include adaptiveValue("font-size", 82, 24, 1);
+        line-height: 144%;
+
+        @media (max-width:$mobile){
+            color: $mainColor;
+            font-weight: 500;
+        }
+    }
+
+    &__subtitle {
+        @include adaptiveValue("font-size", 24, 20, 1);
+        line-height: 146%;
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 12, 20, 1);
+        }
+
+        @media (max-width:$mobile){
+            font-weight: 500; 
+        }
+    }
+
+    &__text {
+        font-size: rem(16);
+        line-height: 150%;
+        color: #6C7A96;
+        @include adaptiveValue("margin-bottom", 55, 20, 1); 
+
+        @media (max-width:$mobile){
+             margin-top: em(20); 
+        }
+
+        p {
+            display: inline;
+        }
+
+        a {
+            white-space: nowrap;
+            color: #FF4305;
+            text-decoration: underline;
+            transition: all 0.3s ease 0s;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    color: $orangeColorDark;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    &__categories {
+    }
+}
+
+.categories-error {
+    display: flex;
+    align-items: flex-start;
+    @include adaptiveValue("column-gap", 64, 15, 1);
+    flex-wrap: wrap;
+    row-gap: rem(20);
+
+    &__list {
+    }
+
+    &__item {
+        &:first-child {
+            @include adaptiveValue("font-size", 18, 16, 1);
+            line-height: 130%;
+
+            @media (max-width:$mobile){
+                color: $darkBlueColor;
+                font-weight: 500;
+            }
+        }
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 20, 16, 1);
+        }
+    }
+
+    &__link {
+        line-height: 150%;
+        color: $darkBlueColor;
+        transition: color 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $orangeColorDark;
+            }
+        }
+    }
+}

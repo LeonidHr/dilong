@@ -1,6 +1,7 @@
 
 .contacts {
-
+    @include adaptiveValue("margin-bottom", 74, 32, 1);
+    
     @media (max-width:$mobile){
         &:not(:last-child) {
             margin: 0 0 20px 0;

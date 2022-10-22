@@ -105,7 +105,7 @@ function modalForm() {
         <button id="modal-exit" class="_icon-exit modal-exit" type="button"></button> 
         <p class="form-registration__text">
           <span>Регистрируясь, я соглашаюсь с условиями</span>
-          <a class="form-registration__text-link" href="#"> Политики конфиденциальности</a>
+          <a class="form-registration__text-link" href="confidentiality.html"> Политики конфиденциальности</a>
         </p>  
       </div>
     `;

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/head.html',{
+	"title":"404"
+	})
+	<body>
+		<div class="wrapper">
+      @@include('html/header.html',{
+        "support":"<button data-da='.menu__body,767.98,last' data-consultation class='support-btn _icon-search-box'>Поддержка</button>"
+      })
+			<main class="page page-info">
+        <section class="error-page">
+          <div class="error-page__container _container">
+            <div class="error-page__num">404</div>
+            <h1 class="error-page__title">Страница не найдена</h1>
+            <h3 class="error-page__subtitle">Проверьте, правильно ли указан адрес страницы</h3>
+            <div data-da=".error-page__title,767.98,3" class="error-page__text">
+              <p>Вы можете воспользоваться поиском, выбрать категорию из каталога или перейти на</p>
+              <a href="index.html"> Главную страницу</a>
+            </div>
+            <div class="error-page__categories categories-error">
+              <ul class="categories-error__list">
+                <li class="categories-error__item">Контрольно-измерительные приборы</li>
+                <li class="categories-error__item">
+                  <a class="categories-error__link" href="#">Аналитическое оборудование</a>
+                </li>
+                <li class="categories-error__item">
+                  <a class="categories-error__link" href="#">Давление</a>
+                </li>
+                <li class="categories-error__item">
+                  <a class="categories-error__link" href="#">Температура</a>
+                </li>
+                <li class="categories-error__item">
+                  <a class="categories-error__link" href="#">Уровень</a>
+                </li>
+                <li class="categories-error__item">
+                  <a class="categories-error__link" href="#">Расход</a>
+                </li>
+              </ul>
+              <ul class="categories-error__list">
+                <li class="categories-error__item">Автоматизация и управление</li>
+                <li class="categories-error__item">
+                  <a class="categories-error__link" href="#">PLC</a>
+                </li>
+                <li class="categories-error__item">
+                  <a class="categories-error__link" href="#">DCS</a>
+                </li>
+                <li class="categories-error__item">
+                  <a class="categories-error__link" href="#">SIS</a>
+                </li>
+                <li class="categories-error__item">
+                  <a class="categories-error__link" href="#">HMI</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+			</main>
+			@@include('html/footer.html',{})
+		</div>
+    <script src="js/app.min.js"></script>
+	</body>
+</html>

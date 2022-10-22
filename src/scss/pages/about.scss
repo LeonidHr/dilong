@@ -1,17 +1,6 @@
-.page-info {
-
-    &__container {
-    }
-
-    &__sidebar {
-    }
-
-    &__about {
-    }
-}
-
 
 .about {
+    @include adaptiveValue("margin-bottom", 167, 20, 1);
 
     &__title {&:not(:last-child) {
         @include adaptiveValue("margin-bottom", 40, 20, 1);
