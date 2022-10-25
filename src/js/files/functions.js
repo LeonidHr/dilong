@@ -1,3 +1,21 @@
+// изменение кнопки в споллерах с кнопками
+export function changeBtns(target, mainBtnClass, containerClass, btnsListClass) {
+    const container = document.querySelector(containerClass),
+    	  mainBtn = container.querySelector(mainBtnClass),
+    	  mainBtnFilter = mainBtn.getAttribute('data-filter');
+	
+    document.querySelector(btnsListClass).insertAdjacentHTML("beforeend", `
+      <li class="type-documents__list-item">
+        <button class="type-documents__item-btn" data-filter="${mainBtnFilter}" type="button">${mainBtn.innerHTML}</button>
+      </li>
+    `);
+
+    mainBtn.innerHTML = target.innerHTML;
+	mainBtn.dataset.filter = target.getAttribute('data-filter');
+
+    target.remove();
+}
+
 //Добавление класса
 export function addClass(el, activeClass) {
 	document.querySelector(el).classList.add(activeClass);

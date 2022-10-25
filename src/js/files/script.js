@@ -1,6 +1,7 @@
 import { isMobile } from './functions.js';
 import { addClass } from './functions.js';
 import { removeClass } from './functions.js';
+import { changeBtns } from './functions.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("click", documentEvents);
@@ -25,6 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
         removeClass('.bottom-header-main__btn', '_hover');
       }
     }
+    if (targetEl.closest('.type-documents__item-btn')) {
+      changeBtns(targetEl, '.type-documents__btn-span', '.type-documents__item', '.type-documents__list');
+    }
+
   }
 
   //* Изменение хедера при прокрутке
@@ -68,6 +73,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   addFocusForSearchForm();
-
 });
 

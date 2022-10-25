@@ -1,0 +1,240 @@
+
+.documents {
+    @include adaptiveValue("margin-bottom", 171, 32, 1);
+
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 40, 20, 1);
+        }
+    }
+
+    &__filters {
+        display: flex;
+        gap: rem(16);
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 40, 20, 1);
+        }
+
+        @media (max-width:$mobile){
+            flex-direction: column; 
+        }
+    }
+
+    &__type {
+        @media (min-width:$mobile){
+            flex: 0 0 rem(282);     
+        }
+    }
+
+    &__search {
+        flex: 1 1 auto;
+    }
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @include adaptiveValue("gap", 24, 12, 1);
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 24, 20, 1);
+        }
+
+        @media (max-width:$mobile){
+            grid-template-columns: repeat(2, 1fr); 
+        }
+        @media (max-width:$mobileSmall){
+            grid-template-columns: 1fr; 
+        }
+    }
+
+    &__document {
+    }
+
+    &__pagination {
+    }
+}
+
+.type-documents {
+    position: relative;
+
+    &__inscription {
+        position: absolute;
+        top: -11px;
+        left: 17px;
+        background-color: #fff;
+        padding: 0 4px;
+        font-weight: 500;
+        font-size: 1rem(12);
+        line-height: 160%;
+        color: $greyColorLight;
+    }
+
+    &__item {
+    
+    }
+
+    &__btn {
+        min-width: 100%;
+        padding: em(14) em(20);
+        border: 1px solid $greyColorLight;
+        border-radius: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+
+        span {
+            line-height: 160%;
+            color: #1F2937;
+        }
+
+        &::before {
+            color: $greyColorLight;
+            transform: rotate(90deg);
+            font-size: rem(11);
+            transition: all 0.3s ease 0s;
+        }
+
+        &._spoller-active {
+            &::before {
+                transform: rotate(-90deg);
+            } 
+        }
+    }
+
+    &__list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 5;
+        padding: rem(7) rem(20);
+        background-color: #ddd;
+        width: 100%;
+    }
+
+    &__list-item {
+        &:not(:last-child) {
+            margin-bottom: em(9);
+        }
+    }
+
+    &__item-btn {
+        transition: color 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $orangeColorDark;
+            }
+        }
+    }
+}
+
+.search-documents {
+    display: flex;
+    gap: rem(16);
+
+    @media (min-width:$mobileSmall){
+        align-items: flex-start;
+    }
+    @media (max-width:$mobileSmall){
+        flex-direction: column; 
+    }
+
+    &__input {
+        flex: 1 1 auto;
+        background: #F7FAFC;
+        border-radius: 1px;
+        color: #6C7A96;
+        line-height: 160%;
+        padding: em(14) em(20);
+    }
+
+    &__btn {
+        @media (min-width:$mobileSmall){
+            flex: 0 0 rem(193);     
+        }
+    }
+}
+.document-documents {
+    background: #F0F2F7;
+    border: 1px solid #C5D0E0;
+    border-radius: 1px;
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+    padding: rem(12) rem(20);
+    @include adaptiveValue("min-height", 245, 100, 1);
+
+    @media (min-width:$mobileSmall){
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__icon {
+        color: #4C5D75;
+        font-size: rem(32);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        @media (min-width:$mobileSmall){
+            align-items: center;     
+        }
+    }
+
+    &__title {
+        line-height: 143%;
+        &:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+
+    &__btn {
+        color: #FF4305;
+        line-height: 143%;
+        text-decoration: dashed underline !important;
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: none !important;
+            }
+        }
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 17, 10, 1);
+        }
+    }
+}
+.pagination-documents {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    @include adaptiveValue("gap", 4, 8, 1);
+
+    &__nums {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        @include adaptiveValue("gap", 4, 8, 1);  
+    }
+
+    &__btn {
+        flex: 0 0 rem(42);
+        height: 42px;
+        border: 1px solid #E1E6F0;
+        border-radius: 1px;
+        font-size: rem(15);
+        line-height: 160%;
+        color: $greyColorLight;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &._active {
+            color: #fff;
+            background: $greenColor;
+            border: 1px solid $greenColor;
+        }
+    }
+}

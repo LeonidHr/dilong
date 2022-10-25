@@ -1,22 +1,70 @@
-document.querySelector('header').addEventListener("click", e => {
-  const targetElement = e.target;
+import pagination from "./pagination.js";
 
-  if (targetElement.classList.contains('search-header__delete')) {
-    document.querySelector('.search-header').classList.remove('_show');
-    document.querySelector('.search-header__form').reset();
-  }
-});
-
-function showSearchResult() {
-  const input = document.querySelector('.search-header__input'),
-        searchHeader = document.querySelector('.search-header');
-
-  input.addEventListener("input", () => {
-    searchHeader.classList.add('_show');
+function search({
+    inputClass,
+    inputBtnClass,
+    filterBtnClass,
+    filterContainerClass, 
+    resultContainerClass, 
+    urlJson, 
+    isDocs}) {
     
-    if (input.value == '') {
-      searchHeader.classList.remove('_show');
+    const input = document.querySelector(inputClass),
+        inputBtn = document.querySelector(inputBtnClass),
+        resultContainer = document.querySelector(resultContainerClass),
+        filterBtn = document.querySelector(filterBtnClass),
+        filterContainer = document.querySelector(filterContainerClass);
+
+    if (input || inputBtn) {
+        inputBtn.addEventListener("click", searchElems);
+        input.addEventListener("input", e => {
+            if (input.value == '') {
+                pagination();
+            }
+        });
+    } else if (filterBtn || filterContainer) {
+        filterContainer.addEventListener("click", searchElems);
     }
-  });
+    
+
+    const getData = async(url) => {
+        const response = await fetch(url);
+        return await response.json();
+    }
+
+    async function searchElems(e) {
+        const postsData = await getData(urlJson);
+        resultContainer.innerHTML = '';
+
+        postsData.docs.forEach(item => {
+            let searchItem;
+
+            if (isDocs) {
+                searchItem = `
+                    <div class="documents__document document-documents">
+                        <div class="document-documents__icon _icon-pdf"></div>
+                        <div class="document-documents__content">
+                        <div class="document-documents__title">${item.name}</div>
+                        <a class="document-documents__btn" href="${item.path}" download>Скачать</a>
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (input || inputBtn) {
+                if (item.name == input.value) {
+                    resultContainer.insertAdjacentHTML("beforeend", searchItem);
+                }
+            } else if (filterBtn || filterContainer) {
+                if (item.filter == e.target.dataset.filter) {
+                    resultContainer.insertAdjacentHTML("beforeend", searchItem);
+                } else if (e.target.dataset.filter === 'all') {
+                    pagination();
+                }
+            }
+            
+        });
+    }
 }
-showSearchResult();
+
+export default search;
