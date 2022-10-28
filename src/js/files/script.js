@@ -14,15 +14,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (targetEl.closest('.support-btn')) {
         addClass('.support-btn', '_hover');
       }
-      if (!targetEl.closest('.support-btn')) {
+      if (document.querySelector('.support-btn') && !targetEl.closest('.support-btn')) {
         removeClass('.support-btn', '_hover');
       }
 
-      if (targetEl.closest('.bottom-header-main__btn')) {
-        addClass('.bottom-header-main__btn', '_hover');
+      if (targetEl.closest('.bottom-header-main__btn .menu-arrow')) {
+        document.querySelector('.bottom-header-main__btn').classList.toggle('_hover');
       }
 
-      if (!targetEl.closest('.bottom-header-main__btn')) {
+      if (!targetEl.closest('.bottom-header-main__btn .menu-arrow')) {
         removeClass('.bottom-header-main__btn', '_hover');
       }
     }

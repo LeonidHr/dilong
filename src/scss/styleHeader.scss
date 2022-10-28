@@ -16,7 +16,7 @@
     }
 
     .header__logo {
-      picture, img {
+      picture {
         &:nth-child(1) {     
           display: none;
         }
@@ -109,7 +109,7 @@
       }
     }
 
-    picture, img {
+    picture {
       max-width: 100%;
 
       &:nth-child(1) {
@@ -340,8 +340,11 @@
 .menu-arrow {
   color: $mainColor;
   font-size: rem(10);
-  transform: rotate(90deg);
-  transition: all 0.3s ease 0s;
+
+  &:before {
+    transform: rotate(90deg);
+    transition: all 0.3s ease 0s;
+  }
 
   @media (max-width:$tablet){
     font-size: rem(17);
@@ -377,6 +380,13 @@
 
     .menu-arrow {
       font-size: rem(12) !important;
+      
+      @media (max-width:$tablet){
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
     }
 
     &._hover {
@@ -387,7 +397,9 @@
       }
 
       .menu-arrow {
-        transform: rotate(-90deg);
+        &::before {
+          transform: rotate(-90deg);
+        }
       }
     }
 
@@ -399,7 +411,7 @@
           transform: translateY(0);
         }
 
-        .menu-arrow {
+        &::before {
           transform: rotate(-90deg);
         }
       }
@@ -420,6 +432,11 @@
     color: $greenColor;
     &::before {
       font-size: rem(12);
+    }
+
+    @media (max-width:$tablet){
+      flex: 1 1 auto;
+      justify-content: flex-end;
     }
   }
 
