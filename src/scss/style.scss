@@ -108,6 +108,8 @@ body {
   }
   &__catalog {
   }
+  &__base {
+  }
 }
 
 .page-info {
@@ -204,3 +206,4 @@ body {
 @import "pages/confidentiality";
 @import "pages/404";
 @import "pages/documents";
+@import "pages/knowledge-base";

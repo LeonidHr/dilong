@@ -16,26 +16,60 @@ import "./files/dynamic_adapt.js";
 //меню бургер
 functions.menuInit();
 
-//поиск на странице документов
-search({
-    inputClass: '.search-documents__input',
-    inputBtnClass: '.search-documents__btn',
-    resultContainerClass: '.documents__body',
-    urlJson: './json/documents.json',
-    isDocs: true
-});
+if (document.title === 'Документы и сертификаты') {
+    pagination({
+        urlJson: './json/documents.json',
+        posts: 10, 
+        isDocs: true, 
+        postsContainerClass: '.documents__body'
+    });
+    
+    //поиск на странице документов
+    search({
+        inputClass: '.search-documents__input',
+        inputBtnClass: '.search-documents__btn',
+        resultContainerClass: '.documents__body',
+        urlJson: './json/documents.json',
+        isDocs: true
+    });
 
-// фильтр на странице документов
-search({
-    filterBtnClass: '.type-documents__item-btn',
-    filterContainerClass: '.type-documents__list',
-    resultContainerClass: '.documents__body',
-    urlJson: './json/documents.json',
-    isDocs: true
-});
+    // фильтр на странице документов
+    search({
+        filterBtnClass: '.type-documents__item-btn',
+        filterContainerClass: '.type-documents__list',
+        resultContainerClass: '.documents__body',
+        urlJson: './json/documents.json',
+        isDocs: true
+    });
+}
 
-//работа с пагинацией
-pagination();
+if (document.title === 'База знаний') {
+    pagination({
+        urlJson: './json/base.json',
+        posts: 5, 
+        isDocs: false, 
+        postsContainerClass: '.base__content'
+    });
+
+    //поиск на странице базы
+    search({
+        inputClass: '.search-documents__input',
+        inputBtnClass: '.search-documents__btn',
+        resultContainerClass: '.base__content',
+        urlJson: './json/base.json',
+        isDocs: false
+    });
+
+    // фильтр на странице базы
+    search({
+        filterBtnClass: '.type-documents__item-btn',
+        filterContainerClass: '.type-documents__list',
+        resultContainerClass: '.base__content',
+        urlJson: './json/base.json',
+        isDocs: false
+    });
+}
+
 
 // модалка
 modalForm();

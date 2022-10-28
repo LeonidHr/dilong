@@ -1,35 +1,54 @@
-function pagination() {
-    const getData = async(url) => {
-        const response = await fetch(url);
-        return await response.json();
-    }
+import { getData } from './functions.js';
 
+function pagination({urlJson, posts, isDocs, postsContainerClass}) {
+    
     async function main() {
-        const postsData = await getData('./json/documents.json');
+        const postsData = await getData(urlJson);
         let currPage = 0;
-        let rows = 10;
-        const pages = Math.ceil(postsData.docs.length / 10);
+        let rows = posts;
+        const pages = Math.ceil(postsData.length / posts);
 
         function displayList(arrData, rowPerPage, page) {
-            const postsContainer = document.querySelector('.documents__body');
+            const postsContainer = document.querySelector(postsContainerClass);
             postsContainer.innerHTML = '';
-
-            //console.log(page);
 
             const start = rowPerPage * page,
                   end = start + rowPerPage;
+            
             const paginatedData = arrData.slice(start, end);
 
             paginatedData.forEach(el => {
-                const postEl = `
-                    <div class="documents__document document-documents">
-                        <div class="document-documents__icon _icon-pdf"></div>
-                        <div class="document-documents__content">
-                        <div class="document-documents__title">${el.name}</div>
-                        <a class="document-documents__btn" href="${el.path}" download>Скачать</a>
+                let postEl;
+
+                if (isDocs) {
+                    postEl = `
+                        <div class="documents__document document-documents">
+                            <div class="document-documents__icon _icon-pdf"></div>
+                            <div class="document-documents__content">
+                                <div class="document-documents__title">${el.name}</div>
+                                <a class="document-documents__btn" href="${el.path}" download>Скачать</a>
+                            </div>
                         </div>
-                    </div>
-                `;
+                    `;
+                } else {
+                    postEl = `
+                        <article class="base__article article-base">
+                            <a class="article-base__img" href="#">
+                                <img src="${el.imgPath}" alt="${el.name}">
+                            </a>
+                            <div class="article-base__content">
+                                <div class="article-base__label">${el.label}</div>
+                                <a class="article-base__title" href="#">${el.name}</a>
+                                <div class="article-base__text">
+                                    <p>
+                                        ${el.text}
+                                    </p>
+                                </div>
+                                <a class="article-base__link" href="#">Читать полностью →</a>
+                            </div>
+                        </article>
+                    `;
+                }
 
                 postsContainer.insertAdjacentHTML("beforeend", postEl);
             });
@@ -48,11 +67,20 @@ function pagination() {
                             paginationContainer.insertAdjacentHTML("beforeend", paginationBtn);
                         }   
                     } else {
-                        for (let i = 0; i < 5; i++) {
-                            paginationContainer.insertAdjacentHTML("beforeend", `
-                                <button class="pagination-documents__btn" data-pag-num type="button">${i + 1}</button>
-                            `);
+                        if (window.innerWidth >= 767.98) {
+                            for (let i = 0; i < 5; i++) {
+                                paginationContainer.insertAdjacentHTML("beforeend", `
+                                    <button class="pagination-documents__btn" data-pag-num type="button">${i + 1}</button>
+                                `);
+                            }
+                        } else {
+                            for (let i = 0; i < 3; i++) {
+                                paginationContainer.insertAdjacentHTML("beforeend", `
+                                    <button class="pagination-documents__btn" data-pag-num type="button">${i + 1}</button>
+                                `);
+                            }
                         }
+                        
                         paginationContainer.insertAdjacentHTML("beforeend", `
                             <button class="pagination-documents__btn" data-pag-dots type="button">...</button>
                         `);
@@ -95,24 +123,6 @@ function pagination() {
             document.querySelector('.pagination-documents').style.maxWidth = `${maxWidthBtns}px`;
         }
 
-        /*
-        function displayPagClickOnDots(page, e) {
-            const paginationContainer = document.querySelector('.pagination-documents__nums');
-            const dots = Array.from(paginationContainer.children);
-            
-            for (let i = 0; i < 5; i++) {
-                dots[i].remove();
-            }
-
-            //console.log(page);
-            for (let i = page; i > page - 5; i--) {
-                paginationContainer.insertAdjacentHTML("afterbegin", `
-                    <button class="pagination-documents__btn" data-pag-num type="button">${i + 1}</button>
-                `);
-            }
-        }
-        */
-
         document.querySelector('.pagination-documents').addEventListener("click", e => {
 
             if (e.target.closest('.pagination-documents__btn')) {
@@ -121,29 +131,28 @@ function pagination() {
 
             if (e.target.closest('[data-pag-next]') && currPage !== pages) {
                 ++currPage;
-                displayList(postsData.docs, rows, currPage);
+                displayList(postsData, rows, currPage);
                 addActive(null);
             }
             if (e.target.closest('[data-pag-prev]') && currPage !== 0) {
                 --currPage;
-                displayList(postsData.docs, rows, currPage);
+                displayList(postsData, rows, currPage);
                 addActive(null);
             }
             if (e.target.closest('[data-pag-num]')) {
                currPage = e.target.innerText; 
                --currPage;
-               displayList(postsData.docs, rows, currPage);
+               displayList(postsData, rows, currPage);
             }
             if (e.target.closest('[data-pag-dots]')) {
                 currPage = e.target.previousElementSibling.innerText; 
-                displayList(postsData.docs, rows, currPage);
+                displayList(postsData, rows, currPage);
                 addActive(null);
-                //displayPagClickOnDots(+currPage, e);
             }
         });
 
-        displayList(postsData.docs, rows, currPage);
-        displayPagination(postsData.docs, pages);
+        displayList(postsData, rows, currPage);
+        displayPagination(postsData, pages);
         addMaxWidthForPagination();
     }
     main();

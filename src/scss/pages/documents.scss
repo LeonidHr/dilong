@@ -8,29 +8,6 @@
         }
     }
 
-    &__filters {
-        display: flex;
-        gap: rem(16);
-
-        &:not(:last-child) {
-            @include adaptiveValue("margin-bottom", 40, 20, 1);
-        }
-
-        @media (max-width:$mobile){
-            flex-direction: column; 
-        }
-    }
-
-    &__type {
-        @media (min-width:$mobile){
-            flex: 0 0 rem(282);     
-        }
-    }
-
-    &__search {
-        flex: 1 1 auto;
-    }
-
     &__body {
         display: grid;
         grid-template-columns: repeat(3, 1fr);

@@ -1,3 +1,8 @@
+export const getData = async(url) => {
+	const response = await fetch(url);
+	return await response.json();
+}
+
 // изменение кнопки в споллерах с кнопками
 export function changeBtns(target, mainBtnClass, containerClass, btnsListClass) {
     const container = document.querySelector(containerClass),

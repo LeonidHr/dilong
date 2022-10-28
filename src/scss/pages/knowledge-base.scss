@@ -1,0 +1,124 @@
+
+.base {
+    @include adaptiveValue("padding-bottom", 43, 32, 1);
+
+    &__container {
+    }
+
+    &__title {
+        @include adaptiveValue("margin-bottom", 40, 20, 1);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: rem(24);
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 24, 20, 1);
+        }
+    }
+
+    &__article {
+    }
+
+    &__pagination {
+    }
+}
+
+
+.article-base {
+    display: flex;
+    align-items: flex-start;
+
+    @media (min-width:$mobile){
+        @include adaptiveValue("gap", 40, 16, 1);     
+    }
+
+    &__img {
+        flex: 0 0 rem(410);
+        overflow: hidden;
+
+        @media (any-hover: hover) {
+            &:hover {
+                img {
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        img {
+            max-width: 100%;
+            transition: all 0.5s ease 0s;
+        }
+    }
+
+    &__content {
+        padding-top: rem(16);
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: rem(718);
+
+        @media (min-width:$mobile){
+            padding-bottom: rem(16); 
+        }
+    }
+
+    &__label {
+        line-height: 143%;
+        color: #4C5D75;
+        padding: em(6) em(12);
+        background: #F0F2F7;
+        border-radius: 1px;
+
+        &:not(:last-child) {
+            margin-bottom: em(12);
+        }
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: rem(16);
+        line-height: 150%;
+        text-transform: uppercase;
+        color: #06504A;
+        transition: color .3s ease 0s;
+
+        &:not(:last-child) {
+            margin-bottom: em(12);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $greenLight;
+            }
+        }
+    }
+
+    &__text {
+        font-size: rem(13);
+        line-height: 150%;
+        color: #4C5D75;
+
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 20, 16, 1);
+        }
+    }
+
+    &__link {
+        font-weight: 500;
+        font-size: rem(13);
+        line-height: 150%;
+        color: #00A373;
+        transition: color .3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $greenLight;
+            }
+        }
+    }
+}
+
