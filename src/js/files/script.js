@@ -4,7 +4,10 @@ import { removeClass } from './functions.js';
 import { changeBtns } from './functions.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-  document.addEventListener("click", documentEvents);
+
+  document.addEventListener("click", e => {
+    documentEvents(e);
+  });
 
   function documentEvents(e) {
     const targetEl = e.target;
@@ -38,7 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (targetEl.closest('.type-documents__item-btn')) {
       changeBtns(targetEl, '.type-documents__btn-span', '.type-documents__item', '.type-documents__list');
     }
-
+    if (targetEl && targetEl.closest('#main-checkbocks-cart')) {
+      e.preventDefault();
+      toggleAllCheckedOnCart();
+    }
   }
 
   //* Изменение хедера при прокрутке
@@ -82,5 +88,28 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   addFocusForSearchForm();
+
+  //* Изменение оющего checked на странице cart
+
+  function toggleAllCheckedOnCart() {
+    const mainCheckbox = document.querySelector('#checkbox');
+      
+    if (mainCheckbox.checked === false) {
+      mainCheckbox.checked = true;
+    } else if (mainCheckbox.checked == true) {
+      mainCheckbox.checked = false;
+    }
+
+    document.querySelectorAll('[data-checkbox]').forEach(item => {
+      if (item.checked == true) {
+        item.checked = false;
+        return;
+      } 
+      if (item.checked == false) {
+        item.checked = true;
+        return;
+      }
+    });
+  }
 });
 

@@ -206,7 +206,7 @@
       flex: 0 0 rem(20);
       height: rem(20);
       background: #FFFFFF;  
-      border: 1px solid $greenColor;
+      border: 1px solid #C5D0E0;
     }
     &::after {
       content: '';
@@ -271,4 +271,8 @@
 .form-registration__checkbox:checked + .form-registration__label::after {
   opacity: 1;
   visibility: visible;
+}
+
+.form-registration__checkbox:checked + .form-registration__label::before {
+  border: 1px solid $greenColor;
 }

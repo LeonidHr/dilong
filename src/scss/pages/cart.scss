@@ -1,0 +1,308 @@
+
+.cart {
+    @include adaptiveValue("padding-bottom", 42, 32, 1);
+
+    &__container {
+    }
+
+    &__title {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 32, 20, 1);
+        }
+    }
+
+    &__body {
+        display: flex;
+        align-items: flex-start;
+        @include adaptiveValue("column-gap", 44, 0, 1);
+        row-gap: rem(20);
+
+        @media (max-width:$mobile){
+            flex-direction: column; 
+        }
+    }
+
+    &__content {
+        flex: 1 1 auto;
+    }
+
+    &__aside {
+        @media (min-width:$mobile){
+            flex: 0 0 rem(322);              
+        }
+    }
+}
+
+.content-cart {
+
+    &__top {
+        display: flex;
+        align-items: center;
+        @include adaptiveValue("gap", 40, 15, 1);
+        margin-bottom: rem(10);
+
+        @media (max-width:$mobileSmall){
+            .form-registration__label::after,
+            .form-registration__label::before {
+                display: none;
+            }
+        }
+    }
+
+    &__label {
+        margin-top: 5px;
+        line-height: 120%;
+        color: #6C7A96;
+        &_underline {
+            text-decoration: underline;
+
+            @media (any-hover: hover) {
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+
+        &_flx100 {
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 6px;
+
+            a {
+                @media (any-hover: hover) {
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    &__list {
+    }
+
+    &__item {
+    }
+
+    &__text {
+        padding: em(30) em(45) em(16) em(45);
+        line-height: 140%;
+        color: #6C7A96;
+        display: flex;
+        align-items: flex-start;
+        gap: rem(18);
+
+        p {
+            flex: 1 1 auto;
+        }
+
+        &::before {
+            flex: 0 0 21;
+            color: $greenColor;
+            font-size: rem(30);
+        }
+        @media (max-width:$mobileSmall){
+            padding: em(20) 0 0 0; 
+        }
+    }
+}
+
+.item-cart {
+    @include adaptiveValue("padding-top", 10, 20, 1);
+    @include adaptiveValue("padding-bottom", 14, 20, 1);
+    display: grid;
+    grid-template-columns: rem(20) rem(64) 1fr rem(75) rem(70);
+    column-gap: rem(24);
+    row-gap: rem(16);
+    border-bottom: 1px solid $greenColor;
+    position: relative;
+
+    @media (max-width:$tablet){
+        grid-template: repeat(2, auto) / rem(20) rem(64) auto;
+    }
+    @media (max-width:$mobileSmall){
+        grid-template: repeat(2, auto) / rem(64) rem(230); 
+        border-bottom: 1px solid #E1E6F0;
+
+        &:first-child {
+            border-top: 1px solid #E1E6F0;
+        }
+    }
+
+    .form-registration__item_checkbox {
+        grid-row-end: span 2;
+
+        @media (max-width:$mobileSmall){
+            position: absolute;
+            top: rem(20);
+            right: 0;
+            width: rem(20);
+            height: rem(20);
+        }
+    }
+
+    &__img {
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__content {
+    }
+
+    &__title {
+        font-weight: 600;
+        line-height: 150%;
+        text-transform: uppercase;
+        color: $darkBlueColor;
+        transition: color .3s ease 0s;
+
+        &:not(:last-child) {
+            margin-bottom: em(6);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $greenLight;
+            }
+        }
+    }
+
+    &__info {
+        display: flex;
+        @include adaptiveValue("gap", 16, 8, 1);
+
+        @media (min-width:$mobile){
+            align-items: center;
+        }
+
+        @media (max-width:$mobile){
+            flex-direction: column;
+        }
+    }
+
+    &__label {
+        font-style: italic;
+        font-size: rem(13);
+        line-height: 120%;
+        color: #6C7A96;
+    }
+
+    &__availability {
+        font-size: rem(13);
+        line-height: 146%;
+        color: #00A373;
+    }
+
+    &__count {
+        align-self: center;
+
+        @media (max-width:$mobileSmall){
+            min-width: rem(83); 
+        }
+    }
+
+    &__prices {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        gap: rem(4);
+
+        @media (max-width:$mobileSmall){
+            padding-left: em(14); 
+        }
+    }
+
+    &__price {
+        @include adaptiveValue("font-size", 20, 16, 1);
+        line-height: 145%;
+
+        @media (max-width:$tablet){
+            font-weight: 500;
+        }
+    }
+
+    &__dis-price {
+        @include adaptiveValue("font-size", 14, 12, 1);
+        line-height: 130%;
+        text-decoration-line: line-through;
+        color: $greyColorLight;
+    }
+
+    &__trash {
+        position: absolute;
+        bottom: rem(25);
+        right: 0;
+        display: none;
+
+        @media (max-width:$mobileSmall){
+            display: block; 
+        }
+    }
+}
+
+.aside-cart {
+    display: flex;
+    flex-direction: column;
+    @include adaptiveValue("gap", 24, 20, 1);
+    padding: rem(24);
+
+    @media (max-width:$mobile){
+        flex-direction: column-reverse;
+        min-width: 100%; 
+    }
+
+    @media (max-width:$mobileSmall){
+        padding: 0;    
+    }
+
+    &__btns {
+        display: flex;
+        flex-direction: column;
+        row-gap: rem(12);
+    }
+
+    &__btn {
+    }
+
+    &__content {
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: rem(16);
+        line-height: 150%;
+        text-transform: uppercase;
+        color: #06504A;
+
+        @media (max-width:$mobile){
+            color: $darkBlueColor; 
+        }
+        
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 16, 12, 1);
+        }
+    }
+
+    &__list {
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        line-height: 150%;
+        color: #6C7A96;
+        &_dark {
+            color: #1F2937;
+            font-weight: 500;
+        }
+        &:not(:last-child) {
+            margin-bottom: em(12);
+        }
+    }
+}
+

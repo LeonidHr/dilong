@@ -691,6 +691,8 @@
 
   &__content {
     padding: 16px 20px 20px 20px;
+    max-height: rem(300);
+    overflow: auto;
   }
 
   // .result-search__amount
@@ -715,17 +717,6 @@
   // .result-search__item
 
   &__item {
-  }
-
-  // .result-search__btn
-
-  &__btn {
-    background: #F0F2F7;
-    min-width: 100%;
-    text-align: center;
-    font-size: rem(14);
-    line-height: 146%;
-    padding: rem(17) 0 rem(14) 0;
   }
 }
 

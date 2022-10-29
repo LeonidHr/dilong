@@ -99,7 +99,7 @@ function modalForm() {
           <div class="form-registration__item form-registration__item_checkbox">
             <input class="form-registration__checkbox" checked id="checkbox" type="checkbox" name="checkbox">
             <label class="form-registration__label" for="checkbox"><span>Подписаться на рассылку акций</span></label>
-            </div>
+          </div>
           <button data-switching class="form-registration__btn form-registration__btn_strech btn-form" type="submit"><span>Зарегистрироваться</span></button>
         </form>
         <button id="modal-exit" class="_icon-exit modal-exit" type="button"></button> 
