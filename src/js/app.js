@@ -70,7 +70,6 @@ if (document.title === 'База знаний') {
     });
 }
 
-
 // модалка
 modalForm();
 
