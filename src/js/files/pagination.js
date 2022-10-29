@@ -33,18 +33,18 @@ function pagination({urlJson, posts, isDocs, postsContainerClass}) {
                 } else {
                     postEl = `
                         <article class="base__article article-base">
-                            <a class="article-base__img" href="#">
+                            <a class="article-base__img" href="base-article.html">
                                 <img src="${el.imgPath}" alt="${el.name}">
                             </a>
                             <div class="article-base__content">
                                 <div class="article-base__label">${el.label}</div>
-                                <a class="article-base__title" href="#">${el.name}</a>
+                                <a class="article-base__title" href="base-article.html">${el.name}</a>
                                 <div class="article-base__text">
                                     <p>
                                         ${el.text}
                                     </p>
                                 </div>
-                                <a class="article-base__link" href="#">Читать полностью →</a>
+                                <a class="article-base__link" href="base-article.html">Читать полностью →</a>
                             </div>
                         </article>
                     `;

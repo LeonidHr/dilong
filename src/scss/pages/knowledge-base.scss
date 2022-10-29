@@ -31,13 +31,44 @@
     display: flex;
     align-items: flex-start;
 
-    @media (min-width:$mobile){
-        @include adaptiveValue("gap", 40, 16, 1);     
+    @media (min-width:$tablet){
+        @include adaptiveValue("column-gap", 40, 16, 1);     
+    }
+
+    @media (max-width:$tablet){
+        row-gap: rem(16);
+        flex-direction: column;
+    }
+
+    &__container-article {
+        @media (min-width:rem(1200)){
+            padding-left: rem(129);  
+        }
     }
 
     &__img {
-        flex: 0 0 rem(410);
+        @media (min-width:$tablet){
+            flex: 0 0 rem(410);     
+        }
         overflow: hidden;
+
+        &_w512 {
+            @media (min-width:$tablet){
+                flex: 0 0 rem(512);  
+            }
+            img {
+                width: 100%;
+                &:not(:last-child) {
+                    margin-bottom: rem(23);
+                }
+            }
+
+            div {
+                @media (max-width:$tablet){
+                    display: none;
+                }
+            }
+        }
 
         @media (any-hover: hover) {
             &:hover {
@@ -66,7 +97,20 @@
         }
     }
 
+    &__content-page {
+        display: flex;
+        align-items: flex-start;
+        @include adaptiveValue("gap", 36, 20, 1);
+        @include adaptiveValue("margin-top", 37, 20, 1);
+        @include adaptiveValue("margin-bottom", 40, 16, 1);
+
+        @media (max-width:$tablet){
+            flex-direction: column-reverse;
+        }
+    }
+
     &__label {
+        display: inline-block;
         line-height: 143%;
         color: #4C5D75;
         padding: em(6) em(12);
@@ -97,10 +141,22 @@
         }
     }
 
+    &__title-page {
+        &:not(:last-child) {
+            @include adaptiveValue("margin-bottom", 16, 8, 1);
+        }
+    }
+
     &__text {
         font-size: rem(13);
         line-height: 150%;
         color: #4C5D75;
+
+        p {
+            &:not(:last-child) {
+                margin-bottom: em(30);
+            } 
+        }
 
         &:not(:last-child) {
             @include adaptiveValue("margin-bottom", 20, 16, 1);

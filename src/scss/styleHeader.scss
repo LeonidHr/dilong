@@ -16,7 +16,7 @@
     }
 
     .header__logo {
-      picture {
+      picture, img {
         &:nth-child(1) {     
           display: none;
         }
@@ -101,7 +101,7 @@
     position: relative;
     z-index: 12;
 
-    @media (max-width:$tablet){
+    @media (max-width:$mobile){
       flex: 0 0 rem(40);
 
       .menu-open & {
@@ -109,7 +109,7 @@
       }
     }
 
-    picture {
+    picture, img {
       max-width: 100%;
 
       &:nth-child(1) {
@@ -234,14 +234,24 @@
         }
 
         .menu-arrow {
-          transform: rotate(-90deg);
-          color: $orangeColor;
+          &::before {
+            transform: rotate(-90deg);
+            color: $orangeColor;
+          }
         }
         .menu__sublist {
           opacity: 1;
           visibility: visible;
           transform: translateY(0);
         }
+      }
+    }
+
+    &._hover {
+      .menu__sublist {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
       }
     }
 
@@ -277,7 +287,7 @@
     }
 
     @media (max-width:$tablet){
-      font-size: rem(20);
+      font-size: rem(16);
     }
   }
 
@@ -356,8 +366,16 @@
     color: $greenColor;
   }
 
+  ._hover {
+    &::before {
+      transform: rotate(-90deg);
+    }
+  }
+
   ._spoller-active & {
-    transform: rotate(-90deg);
+    &::before {
+      transform: rotate(-90deg);
+    }
   }
 }
 
@@ -395,12 +413,6 @@
         visibility: visible;
         transform: translateY(0);
       }
-
-      .menu-arrow {
-        &::before {
-          transform: rotate(-90deg);
-        }
-      }
     }
 
     @media (any-hover: hover) {
@@ -411,13 +423,15 @@
           transform: translateY(0);
         }
 
-        &::before {
-          transform: rotate(-90deg);
+        .menu-arrow {
+          &::before {
+            transform: rotate(-90deg);
+          }
         }
       }
     }
 
-    @media (max-width:rem(649.98)){
+    @media (max-width:$mobile){
       min-width: 100%;
     }
   }

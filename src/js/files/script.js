@@ -25,6 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!targetEl.closest('.bottom-header-main__btn .menu-arrow')) {
         removeClass('.bottom-header-main__btn', '_hover');
       }
+
+      if (window.innerWidth >= 992.98) {
+        if (targetEl.closest('.menu__item .menu-arrow')) {
+          targetEl.parentElement.parentElement.classList.toggle('_hover');
+        }
+        if (!targetEl.closest('.menu__item .menu-arrow')) {
+          document.querySelectorAll('.menu__item').forEach(item => item.classList.remove('_hover'));
+        }
+      }
     }
     if (targetEl.closest('.type-documents__item-btn')) {
       changeBtns(targetEl, '.type-documents__btn-span', '.type-documents__item', '.type-documents__list');
