@@ -120,7 +120,23 @@ function formInit() {
 						form.reset();
 					});
 				}
-				
+				if (form.hasAttribute('data-checkout')) {
+					postData('data-checkout.php', json)
+					.then(data => {
+						form.parentElement.classList.remove('_sending');
+						window.location.href = 'checkout-res.html';
+					}).catch(() => {
+						form.parentElement.classList.remove('_sending');
+						window.location.href = 'checkout-res.html';
+						/*openModalResult({
+                            modal: '#modal', 
+                            pathImg: 'img/icons/done.svg',
+                            title: 'Произошла ошибка',
+                        });*/
+					}).finally(() => {
+						form.reset();
+					});
+				}
 			}	
 		});
 	}

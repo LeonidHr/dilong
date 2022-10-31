@@ -110,6 +110,8 @@ body {
   }
   &__base {
   }
+  &__checkout {
+  }
 }
 
 .page-info {
@@ -178,6 +180,28 @@ body {
   }
 }
 
+//стилизация скролла============================================================
+/* Работает в Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #C5D0E0 #F0F2F7;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;               /* ширина всей полосы прокрутки */
+}
+
+*::-webkit-scrollbar-track {
+  background: #F0F2F7;        /* цвет зоны отслеживания */
+  border-radius: 50px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #C5D0E0;    /* цвет бегунка */
+  border-radius: 30px;      /* округлось бегунка */
+  border: 2px solid #F0F2F7;  /* отступ вокруг бегунка */
+}
+
 //Общие стили==========================================================
 @import "ui";
 //popup==========================================================================
@@ -208,3 +232,4 @@ body {
 @import "pages/documents";
 @import "pages/knowledge-base";
 @import "pages/cart";
+@import "pages/checkout";

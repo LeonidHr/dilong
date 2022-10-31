@@ -167,6 +167,11 @@
     line-height: 160%;
     transition: border 0.3s ease 0s;
 
+    &_textarea {
+      min-height: rem(108);
+      resize: none;
+    }
+
     &::placeholder {
       color: #6C7A96;
       font-style: italic;
@@ -181,6 +186,12 @@
   // .form-registration__checkbox
 
   &__checkbox {
+    appearance: none;
+  }
+
+   // .form-registration__radio
+
+  &__radio {
     appearance: none;
   }
 
@@ -221,6 +232,22 @@
       transition: all 0.3s ease 0s;
       background: url('../../img/icons/checkbox.svg') no-repeat;
       background-size: rem(13) rem(13);
+    }
+
+    &_radio {
+      &::before {
+        border: 1px solid #C5D0E0;
+        border-radius: 50%;
+      }
+
+      &::after {
+        width: rem(7);
+        height: rem(7);
+        background: $greenColor;
+        border-radius: 50%;
+        top: rem(6.5);
+        left: rem(6.5);
+      }
     }
   }
 
@@ -274,5 +301,14 @@
 }
 
 .form-registration__checkbox:checked + .form-registration__label::before {
+  border: 1px solid $greenColor;
+}
+
+.form-registration__radio:checked + .form-registration__label_radio::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form-registration__radio:checked + .form-registration__label_radio::before {
   border: 1px solid $greenColor;
 }

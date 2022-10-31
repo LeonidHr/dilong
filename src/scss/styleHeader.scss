@@ -989,6 +989,7 @@
 
   &__icons {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     column-gap: rem(32);
     row-gap: rem(10);

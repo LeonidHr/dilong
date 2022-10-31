@@ -266,6 +266,7 @@
     }
 
     &__btn {
+        text-align: center;
     }
 
     &__content {
@@ -288,6 +289,11 @@
     }
 
     &__list {
+
+        &_border-top {
+            padding-top: rem(20);
+            border-top: 1px solid #E1E6F0;
+        }
     }
 
     &__item {
@@ -300,6 +306,10 @@
             color: #1F2937;
             font-weight: 500;
         }
+        &_green {
+            color: #0A766F;
+        }
+
         &:not(:last-child) {
             margin-bottom: em(12);
         }
