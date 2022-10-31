@@ -1271,7 +1271,7 @@ body {
   color: #00f0a9;
 }
 
-.menu-arrow ._hover::before {
+._hover .menu-arrow::before {
   -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);

@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('.bottom-header-main__btn').classList.toggle('_hover');
       }
 
-      if (!targetEl.closest('.bottom-header-main__btn .menu-arrow')) {
+      if (!targetEl.closest('.bottom-header-main__btn .menu-arrow') && !targetEl.closest('.bottom-header-main__btn')) {
         removeClass('.bottom-header-main__btn', '_hover');
       }
 
@@ -111,5 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  //=====================================================================
+
 });
 

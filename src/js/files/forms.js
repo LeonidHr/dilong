@@ -123,6 +123,8 @@ function formInit() {
 				if (form.hasAttribute('data-checkout')) {
 					postData('data-checkout.php', json)
 					.then(data => {
+						const formCheckout = document.querySelector('[data-checkout]');
+						const checkoutInput = formCheckout.querySelector('.form-registration__input');
 						form.parentElement.classList.remove('_sending');
 						window.location.href = 'checkout-res.html';
 					}).catch(() => {

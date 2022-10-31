@@ -366,7 +366,7 @@
     color: $greenColor;
   }
 
-  ._hover {
+  ._hover & {
     &::before {
       transform: rotate(-90deg);
     }
