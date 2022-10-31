@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="img/logo-sm.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.min.css?_v=20221031191047">
-  <title>Документы и сертификаты</title>
+  <title>Оформить заказ</title>
 </head>
 	<body>
 		<div class="wrapper">
@@ -356,78 +356,163 @@
 
 
 
-			<main class="page page-info">
-        <div class="page-info__container _container">
-          <aside class="page-info__sidebar sidebar-nav">
-            <nav class="sidebar-nav__nav">
-              <h3 class="sidebar-nav__title">DILONG SENSORS</h3>
-              <ul class="sidebar-nav__list">
-                <li class="sidebar-nav__item _icon-wave">
-                  <a class="sidebar-nav__link" href="about.html">О компании</a>
-                </li>
-                <li class="sidebar-nav__item _icon-wave">
-                  <a class="sidebar-nav__link" href="contacts.html">Контакты</a>
-                </li>
-              </ul>
-              <h3 class="sidebar-nav__title">Помощь</h3>
-              <ul class="sidebar-nav__list">
-                <li class="sidebar-nav__item _icon-wave">
-                  <a class="sidebar-nav__link" href="documents.html">Документы и сертификаты</a>
-                </li>
-                <li class="sidebar-nav__item _icon-wave">
-                  <a class="sidebar-nav__link" href="#">Об индивидуальном заказе</a>
-                </li>
-                <li class="sidebar-nav__item _icon-wave">
-                  <a class="sidebar-nav__link" href="delivery.html">Доставка и оплата</a>
-                </li>
-                <li class="sidebar-nav__item _icon-wave">
-                  <a class="sidebar-nav__link" href="#">Для юридических лиц</a>
-                </li>
-                <li class="sidebar-nav__item _icon-wave">
-                  <a class="sidebar-nav__link" href="base.html">База знаний</a>
-                </li>
-              </ul>
-            </nav>
-          </aside>
-          <section class="page-info__documents documents">
-            <h1 class="documents__title title title_s36">Документы и сертификаты</h1>
-            <div class="filters">
-              <div data-spollers data-spollers-speed="300" class="filters__type type-documents">
-                <div class="type-documents__inscription">Тип документа</div>
-                <div class="type-documents__item">
-                  <button data-spoller data-spoller-close class="type-documents__btn _icon-arrow-right" type="button">
-                    <span class="type-documents__btn-span" data-filter="all">Все документы</span> 
-                  </button>
-                  <ul class="type-documents__list">
-                    <li class="type-documents__list-item">
-                      <button class="type-documents__item-btn" data-filter="1" type="button">Документы 1</button>
-                    </li>
-                    <li class="type-documents__list-item">
-                      <button class="type-documents__item-btn" data-filter="2" type="button">Документы 2</button>
-                    </li>
-                    <li class="type-documents__list-item">
-                      <button class="type-documents__item-btn" data-filter="3" type="button">Документы 3</button>
-                    </li>
-                  </ul>
+			<main class="page">
+        <section class="page__checkout checkout">
+          <div class="_container">
+            <h1 class="checkout__title-main title title_s36">Оформить заказ</h1>
+            <div class="checkout__body">
+              <form data-checkout class="content-checkout checkout__content" action="#">
+                <div class="content-checkout__item">
+                  <h3 class="content-checkout__title">1. Данные плательщика</h3>
+                  <div class="form-registration__item form-registration__item_checkbox">
+                    <input class="form-registration__checkbox" checked id="checkbox" type="checkbox" name="checkbox">
+                    <label class="form-registration__label" for="checkbox"><span>Использовать данные из профиля</span></label>
+                  </div>
+                  <div class="form-registration__item">
+                    <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="company" placeholder="ИНН организации *">
+                    <div class="form-registration__text modal__text">
+                      <span>Укажите ИНН, чтобы загрузить реквизиты компании</span>
+                    </div>
+                  </div>
+                  <div class="form-registration__item">
+                    <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="name-company" placeholder="Название компании *">
+                  </div>
+                  <div class="form-registration__item">
+                    <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="legal-adress" placeholder="Юридический адрес *">
+                  </div>
+                  <div class="form-registration__item">
+                    <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="bank" placeholder="БИК банка *">
+                  </div>
+                  <div class="form-registration__item">
+                    <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="ckeck" placeholder="Расчетный счет *">
+                  </div>
+                  <div class="form-registration__item">
+                    <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="your-name" placeholder="Имя получателя *">
+                  </div>
+                  <div class="content-checkout__row">
+                    <div class="form-registration__item">
+                      <input class="form-registration__input _email" data-error="Некорректно введен E-mail" data-req autocomplete="off" type="text" name="email" placeholder="E-mail *">
+                    </div>
+                    <div class="form-registration__item">
+                      <input class="form-registration__input _phone" data-error="Некорректный номер" data-req autocomplete="off" type="text" name="phone" placeholder="Номер телефона *">
+                    </div>
+                  </div>
+                  <div class="form-registration__item form-registration__item_checkbox">
+                    <input class="form-registration__checkbox" id="checkbox_1" type="checkbox" name="checkbox">
+                    <label class="form-registration__label" for="checkbox_1"><span>Обновить данные в профиле</span></label>
+                  </div>
                 </div>
-              </div>
-              <form class="filters__search search-documents" action="#">
-                <input class="search-documents__input" placeholder="Найти документ..." autocomplete="off" type="text" name="search-document">
-                <button class="search-documents__btn btn-form" type="button"><span>Найти</span></button>
+                <div class="content-checkout__item">
+                  <h3 class="content-checkout__title">2. Выберите способ доставки</h3>
+                  <div class="form-registration__item form-registration__item_radio">
+                    <input class="form-registration__radio" id="radio-yourself" type="radio" name="radio-delivery">
+                    <label class="form-registration__label form-registration__label_radio" for="radio-yourself"><span>Самовывоз</span></label>
+                  </div>
+                  <div class="form-registration__item form-registration__item_radio">
+                    <input class="form-registration__radio" checked id="radio-company" type="radio" name="radio-delivery">
+                    <label class="form-registration__label form-registration__label_radio" for="radio-company"><span>Транспортная компания</span></label>
+                  </div>
+                  <div class="form-registration__item">
+                    <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="adress" placeholder="Введите адрес доставки *">
+                  </div>
+                  <div class="content-checkout__row content-checkout__row_4">
+                    <div class="form-registration__item">
+                      <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="flat" placeholder="Квартира/офис *">
+                    </div>
+                    <div class="form-registration__item">
+                      <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="floor" placeholder="Этаж *">
+                    </div>
+                    <div class="form-registration__item">
+                      <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="entrance" placeholder="Подъезд *">
+                    </div>
+                    <div class="form-registration__item">
+                      <input class="form-registration__input _obligatory" data-error="Нужно заполнить это поле" data-req autocomplete="off" type="text" name="intercom" placeholder="Домофон *">
+                    </div>
+                  </div>
+                  <div class="form-registration__item">
+                    <textarea class="form-registration__input form-registration__input_textarea" name="comment" id="comment" placeholder="Комментарий к заказу *"></textarea>
+                  </div>
+                  <div class="content-checkout__text">Стоимость доставки — <span>490 ₽</span></div>
+                </div>
+                <div class="content-checkout__item">
+                  <h3 class="content-checkout__title">3. Выберите способ оплаты</h3>
+                  <div class="form-registration__item form-registration__item_radio">
+                    <input class="form-registration__radio" checked id="pay-method" type="radio" name="radio-method">
+                    <label class="form-registration__label form-registration__label_radio" for="pay-method"><span>Безналичный расчет</span></label>
+                  </div>
+                </div>
+                <button data-switching class="form-registration__btn content-checkout__btn btn-form" type="submit"><span>Оформить заказ</span></button>
+                <p class="form-registration__text">
+                  <span>Подтверждая заказ, Вы соглашаетесь с условиями</span>
+                  <a class="form-registration__text-link" href="confidentiality.html"> Политики конфиденциальности</a>
+                </p>  
               </form>
+              <aside class="checkout__aside aside-checkout aside-checkout_disp-none992">
+                <h3 class="aside-checkout__title">Ваша корзина</h3>
+                <ul class="aside-checkout__list">
+                  <li class="aside-checkout__item item-checkout-aside">
+                    <div class="item-checkout-aside__img">
+                      <picture><source srcset="img/control/1.webp" type="image/webp"><img src="img/control/1.jpg" alt="РАСТВОРЕННЫЙ КИСЛОРОД (ОПТИЧЕСКИЙ), SUP-DY2900, Производитель"></picture>
+                    </div>
+                    <div class="item-checkout-aside__content">
+                      <h5 class="item-checkout-aside__title">
+                        РАСТВОРЕННЫЙ КИСЛОРОД (ОПТИЧЕСКИЙ), SUP-DY2900, Производитель
+                      </h5>
+                      <div class="item-checkout-aside__quantity">2 шт.</div>
+                    </div>
+                    <div class="item-checkout-aside__price">251 705 ₽</div>
+                  </li>
+                  <li class="aside-checkout__item item-checkout-aside">
+                    <div class="item-checkout-aside__img">
+                      <picture><source srcset="img/control/2.webp" type="image/webp"><img src="img/control/2.png" alt="КОНТРОЛЛЕР pН, SUP-PH160S, Производитель"></picture>
+                    </div>
+                    <div class="item-checkout-aside__content">
+                      <h5 class="item-checkout-aside__title">
+                        КОНТРОЛЛЕР pН, SUP-PH160S, Производитель
+                      </h5>
+                      <div class="item-checkout-aside__quantity">1 шт.</div>
+                    </div>
+                    <div class="item-checkout-aside__price">251 705 ₽</div>
+                  </li>
+                  <li class="aside-checkout__item item-checkout-aside">
+                    <div class="item-checkout-aside__img">
+                      <picture><source srcset="img/automation/1.webp" type="image/webp"><img src="img/automation/1.jpg" alt="ДАТЧИК pH, SUP-pH-5022, Производитель"></picture>
+                    </div>
+                    <div class="item-checkout-aside__content">
+                      <h5 class="item-checkout-aside__title">
+                        ДАТЧИК pH, SUP-pH-5022, Производитель
+                      </h5>
+                      <div class="item-checkout-aside__quantity">1 шт.</div>
+                    </div>
+                    <div class="item-checkout-aside__price">251 705 ₽</div>
+                  </li>
+                </ul>
+                <ul class="aside-cart__list aside-cart__list_border-top">
+                  <li class="aside-cart__item">
+                    <span>Товары (4)</span>
+                    <span>561 у.е.</span>
+                  </li>
+                  <li class="aside-cart__item">
+                    <span>Общий вес</span>
+                    <span>24,6 кг</span>
+                  </li>
+                  <li class="aside-cart__item aside-cart__item_green">
+                    <span>Скидка (10%)</span>
+                    <span>15 у.е.</span>
+                  </li>
+                  <li class="aside-cart__item aside-cart__item_green">
+                    <span>Скидка по промокоду</span>
+                    <span>25 у.е.</span>
+                  </li>
+                  <li class="aside-cart__item aside-cart__item_dark">
+                    <span>Итого к оплате</span>
+                    <span>561 у.е.</span>
+                  </li>
+                </ul>
+              </aside>
             </div>
-            <div class="documents__body"></div>
-            <div class="documents__pagination pagination-documents">
-              <button class="pagination-documents__btn" data-pag-prev type="button">
-                <img src="img/icons/doc-pagination-left.svg" alt="Arrow left">
-              </button>
-              <div class="pagination-documents__nums"></div>
-              <button class="pagination-documents__btn" data-pag-next type="button">
-                <img src="img/icons/doc-pagintaion-right.svg" alt="Arrow right">
-              </button>
-            </div>
-          </section>
-        </div>
+          </div>
+        </section>
 			</main>
 			<footer class="footer">
   <div class="footer__cotnainer _container">
